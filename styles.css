@@ -133,12 +133,13 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    Sections — General
    ============================================================ */
 .section {
-  padding: 100px 0;
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .8s cubic-bezier(.25,.46,.45,.94),
-              transform .8s cubic-bezier(.25,.46,.45,.94);
+  padding: 80px 0;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .6s cubic-bezier(.25,.46,.45,.94),
+              transform .6s cubic-bezier(.25,.46,.45,.94);
 }
 .section.visible { opacity: 1; transform: translateY(0); }
+.section.visible.dimmed { opacity: .4; }
 
 .section-heading {
   font-size: 2.75rem; font-weight: 700; letter-spacing: -.04em;
@@ -146,7 +147,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 .section-subheading {
   font-size: 1rem; color: #86868b; font-weight: 400;
-  margin-bottom: 48px; letter-spacing: -.01em;
+  margin-bottom: 36px; letter-spacing: -.01em;
 }
 
 /* ============================================================
@@ -155,7 +156,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .section-hero { padding-top: 48px; }
 
 .hero {
-  min-height: 90vh; display: flex; align-items: center;
+  min-height: 80vh; display: flex; align-items: center;
   justify-content: center; text-align: center; padding: 80px 40px 60px;
 }
 
@@ -183,7 +184,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .hero-value {
   font-size: 1.0625rem; color: #424245; line-height: 1.7;
-  max-width: 580px; margin: 0 auto 40px; letter-spacing: -.01em;
+  max-width: 580px; margin: 0 auto 32px; letter-spacing: -.01em;
 }
 
 .hero-stats {
@@ -235,7 +236,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .process-phase:hover .phase-node,
 .process-phase.active .phase-node {
-  background: #1d1d1f; border-color: #1d1d1f; transform: scale(1.08);
+  background: #1d1d1f; border-color: #1d1d1f;
 }
 .process-phase:hover .phase-number,
 .process-phase.active .phase-number { color: #fff; }
@@ -247,13 +248,13 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .phase-desc {
   font-size: .6875rem; color: #86868b; line-height: 1.6;
-  max-height: 0; overflow: hidden; opacity: 0;
-  transition: max-height .4s ease, opacity .3s ease;
+  opacity: 0;
+  transition: opacity .3s ease;
 }
 
 .process-phase:hover .phase-desc,
 .process-phase.active .phase-desc {
-  max-height: 120px; opacity: 1;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -264,7 +265,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     text-align: left; padding: 12px 0;
   }
   .phase-node { margin: 0; flex-shrink: 0; }
-  .phase-desc { max-height: none; opacity: 1; }
+  .phase-desc { opacity: 1; }
 }
 
 /* ============================================================
@@ -436,12 +437,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .patent-card {
   display: flex; flex-direction: column; gap: 8px;
   padding: 24px; border: 1px solid #e8e8ed; border-radius: 14px;
-  transition: border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 a.patent-card:hover {
   border-color: #d2d2d7;
   box-shadow: 0 4px 20px rgba(0,0,0,.06);
-  transform: translateY(-2px);
 }
 
 .pc-badge {
@@ -467,7 +467,7 @@ a.patent-card:hover {
    5. Resume / Experience
    ============================================================ */
 .resume-block {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 .resume-block:last-child { margin-bottom: 0; }
 
@@ -570,10 +570,10 @@ a.patent-card:hover {
   padding: 14px 24px; border-radius: 12px;
   font-size: .875rem; font-weight: 500; color: #1d1d1f;
   border: 1px solid #e8e8ed;
-  transition: background .2s ease, border-color .2s ease, transform .15s ease;
+  transition: background .2s ease, border-color .2s ease;
 }
 .connect-btn:hover {
-  background: #fff; border-color: #d2d2d7; transform: translateY(-1px);
+  background: #fff; border-color: #d2d2d7;
 }
 .connect-btn svg { flex-shrink: 0; }
 
@@ -597,10 +597,10 @@ a.patent-card:hover {
    ============================================================ */
 @media (max-width: 640px) {
   .container { padding: 0 24px; }
-  .section { padding: 72px 0; }
+  .section { padding: 60px 0; }
   .section-heading { font-size: 2rem; }
 
-  .hero { padding: 60px 24px 40px; min-height: 80vh; }
+  .hero { padding: 60px 24px 40px; min-height: 70vh; }
   .hero-headshot { width: 100px; height: 100px; }
   .hero-name { font-size: 2.5rem; }
   .hero-value { font-size: .9375rem; }

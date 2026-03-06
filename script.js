@@ -16,22 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollEls.forEach(el => revealObserver.observe(el));
 
   /* ---------------------------------------------------------
-     Active Nav Link
+     Active Nav Link + Section Focus (narrative scroll)
      --------------------------------------------------------- */
   const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  let currentSection = null;
 
-  const navObserver = new IntersectionObserver((entries) => {
+  const focusObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        currentSection = entry.target;
         const id = entry.target.id;
         navLinks.forEach(link => {
           link.classList.toggle('active', link.dataset.section === id);
         });
+        sections.forEach(s => {
+          if (s.classList.contains('visible')) {
+            s.classList.toggle('dimmed', s !== currentSection);
+          }
+        });
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.3, rootMargin: '-10% 0px -10% 0px' });
 
-  sections.forEach(section => navObserver.observe(section));
+  sections.forEach(section => focusObserver.observe(section));
 
   /* ---------------------------------------------------------
      Mobile Navigation
