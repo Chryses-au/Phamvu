@@ -593,12 +593,19 @@ a.patent-card:hover {
   .section-heading { font-size: 2rem; }
 
   .section-hero { overflow-y: auto; }
-  .hero { padding: 20px 24px 30px; }
+  .hero { padding: 20px 24px 60px; }
   .hero-headshot { width: 160px; height: 160px; }
   .hero-name { font-size: 2.5rem; }
   .hero-value { font-size: .9375rem; }
   .hero-stats { gap: 20px; }
   .stat-number { font-size: 1.75rem; }
+
+  /* Process — disable flex centering so it scrolls naturally on mobile */
+  .section-process { display: block; }
+  .section-process > .container { margin-top: 0; margin-bottom: 0; padding-bottom: 60px; }
+
+  /* Extra bottom breathing room on mobile for content-heavy sections */
+  #patents, #resume { padding-bottom: 140px; }
 
   .case-toggle { padding: 18px 20px; }
   .case-narrative, .case-hero-img { padding-left: 20px; padding-right: 20px; }
