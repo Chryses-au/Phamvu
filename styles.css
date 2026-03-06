@@ -157,7 +157,7 @@ main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
 
 .hero-photo { margin-bottom: 28px; }
 .hero-headshot {
-  width: 150px; height: 150px; border-radius: 50%;
+  width: 200px; height: 200px; border-radius: 50%;
   object-fit: cover; object-position: center top;
   margin: 0 auto;
   box-shadow: 0 4px 24px rgba(0,0,0,.1);
@@ -583,7 +583,7 @@ a.patent-card:hover {
   .section-heading { font-size: 2rem; }
 
   .hero { padding: 60px 24px 40px; }
-  .hero-headshot { width: 120px; height: 120px; }
+  .hero-headshot { width: 160px; height: 160px; }
   .hero-name { font-size: 2.5rem; }
   .hero-value { font-size: .9375rem; }
   .hero-stats { gap: 20px; }
