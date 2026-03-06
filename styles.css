@@ -144,13 +144,14 @@ main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
    1. Hero
    ============================================================ */
 .section-hero {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: flex-start; justify-content: center;
   padding-top: 48px;
 }
 
 .hero {
   display: flex; align-items: center;
   justify-content: center; text-align: center; padding: 40px 40px 60px;
+  margin-top: auto; margin-bottom: auto;
 }
 
 .hero-content { max-width: 680px; }
@@ -204,8 +205,10 @@ main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
    ============================================================ */
 .section-process {
   background: #fafafa;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
+  display: flex; align-items: flex-start; justify-content: center;
+}
+.section-process > .container {
+  margin-top: auto; margin-bottom: auto;
 }
 
 .process-timeline {
@@ -538,8 +541,10 @@ a.patent-card:hover {
 .section-connect {
   text-align: center;
   background: #fafafa;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
+  display: flex; align-items: flex-start; justify-content: center;
+}
+.section-connect > .container {
+  margin-top: auto; margin-bottom: auto;
 }
 
 .section-footer-note {
