@@ -1,36 +1,161 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------------------------------------------------
-     Scroll Reveal
+     Chapter Controller
      --------------------------------------------------------- */
-  const sections = document.querySelectorAll('.section');
-  const scrollEls = document.querySelectorAll('.scroll-reveal');
+  const chapters = Array.from(document.querySelectorAll('.section'));
+  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  const navbar = document.getElementById('navbar');
+  let currentIndex = 0;
+  let isTransitioning = false;
+  const TRANSITION_MS = 420;
 
+  function updateNav(index) {
+    const id = chapters[index].id;
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.section === id);
+    });
+  }
+
+  function triggerReveals(section) {
+    section.querySelectorAll('.scroll-reveal').forEach(el => {
+      el.classList.add('visible');
+    });
+  }
+
+  function goToChapter(index) {
+    if (index < 0 || index >= chapters.length) return;
+    if (index === currentIndex || isTransitioning) return;
+
+    isTransitioning = true;
+    const prev = chapters[currentIndex];
+    const next = chapters[index];
+    const goingForward = index > currentIndex;
+
+    prev.classList.remove('active');
+    if (goingForward) {
+      next.scrollTop = 0;
+    } else {
+      next.scrollTop = next.scrollHeight - next.clientHeight;
+    }
+    next.classList.add('active');
+    currentIndex = index;
+    updateNav(index);
+    triggerReveals(next);
+
+    setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
+  }
+
+  chapters[0].classList.add('active');
+  updateNav(0);
+  triggerReveals(chapters[0]);
+
+  /* ---------------------------------------------------------
+     Scroll-Reveal Observer (inner elements)
+     --------------------------------------------------------- */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 
-  scrollEls.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.scroll-reveal').forEach(el => {
+    revealObserver.observe(el);
+  });
 
   /* ---------------------------------------------------------
-     Active Nav Link (scroll-snap aware)
+     Wheel → Chapter Transition
      --------------------------------------------------------- */
-  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  const BOUNDARY_TOL = 3;
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.dataset.section === id);
-        });
-      }
+  function isAtBottom(el) {
+    return el.scrollHeight - el.clientHeight - el.scrollTop < BOUNDARY_TOL;
+  }
+  function isAtTop(el) {
+    return el.scrollTop < BOUNDARY_TOL;
+  }
+  function isNonScrollable(el) {
+    return el.scrollHeight <= el.clientHeight + BOUNDARY_TOL;
+  }
+
+  let wheelCooldown = false;
+
+  document.addEventListener('wheel', (e) => {
+    if (isTransitioning || wheelCooldown) return;
+
+    const active = chapters[currentIndex];
+    const nonScrollable = isNonScrollable(active);
+    const atBottom = nonScrollable || isAtBottom(active);
+    const atTop = nonScrollable || isAtTop(active);
+
+    if (e.deltaY > 0 && atBottom) {
+      e.preventDefault();
+      wheelCooldown = true;
+      goToChapter(currentIndex + 1);
+      setTimeout(() => { wheelCooldown = false; }, TRANSITION_MS + 200);
+    } else if (e.deltaY < 0 && atTop) {
+      e.preventDefault();
+      goToChapter(currentIndex - 1);
+      wheelCooldown = true;
+      setTimeout(() => { wheelCooldown = false; }, TRANSITION_MS + 200);
+    }
+  }, { passive: false });
+
+  /* ---------------------------------------------------------
+     Touch → Chapter Transition
+     --------------------------------------------------------- */
+  let touchStartY = 0;
+  const SWIPE_THRESHOLD = 50;
+
+  document.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    if (isTransitioning) return;
+    const deltaY = touchStartY - e.changedTouches[0].clientY;
+    const active = chapters[currentIndex];
+    const nonScrollable = isNonScrollable(active);
+    const atBottom = nonScrollable || isAtBottom(active);
+    const atTop = nonScrollable || isAtTop(active);
+
+    if (deltaY > SWIPE_THRESHOLD && atBottom) {
+      goToChapter(currentIndex + 1);
+    } else if (deltaY < -SWIPE_THRESHOLD && atTop) {
+      goToChapter(currentIndex - 1);
+    }
+  }, { passive: true });
+
+  /* ---------------------------------------------------------
+     Keyboard → Chapter Transition
+     --------------------------------------------------------- */
+  document.addEventListener('keydown', (e) => {
+    if (isTransitioning) return;
+    const active = chapters[currentIndex];
+    const nonScrollable = isNonScrollable(active);
+    const atBottom = nonScrollable || isAtBottom(active);
+    const atTop = nonScrollable || isAtTop(active);
+
+    if ((e.key === 'ArrowDown' || e.key === 'PageDown') && atBottom) {
+      e.preventDefault();
+      goToChapter(currentIndex + 1);
+    } else if ((e.key === 'ArrowUp' || e.key === 'PageUp') && atTop) {
+      e.preventDefault();
+      goToChapter(currentIndex - 1);
+    }
+  });
+
+  /* ---------------------------------------------------------
+     Nav Click → Chapter
+     --------------------------------------------------------- */
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.dataset.section;
+      const idx = chapters.findIndex(ch => ch.id === targetId);
+      if (idx !== -1) goToChapter(idx);
     });
-  }, { threshold: 0.15, rootMargin: '-10% 0px -10% 0px' });
-
-  sections.forEach(section => navObserver.observe(section));
+  });
 
   /* ---------------------------------------------------------
      Mobile Navigation
@@ -41,14 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('open');
     mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
   });
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+  mobileMenu.querySelectorAll('a[data-section]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.dataset.section;
+      const idx = chapters.findIndex(ch => ch.id === targetId);
+      if (idx !== -1) goToChapter(idx);
       navToggle.classList.remove('open');
       mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
     });
   });
 
@@ -138,36 +265,41 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = link.dataset.subsector;
       const target = document.getElementById(id);
 
+      const portfolioIdx = chapters.findIndex(ch => ch.id === 'portfolio');
+      if (portfolioIdx !== -1) goToChapter(portfolioIdx);
+
       if (target) {
-        const toggle = target.querySelector('.case-toggle');
-        if (!target.classList.contains('open') && toggle) toggle.click();
         setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+          const toggle = target.querySelector('.case-toggle');
+          if (!target.classList.contains('open') && toggle) toggle.click();
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }, TRANSITION_MS);
       }
 
       navToggle.classList.remove('open');
       mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
     });
   });
 
   /* ---------------------------------------------------------
-     Navbar Background
+     Navbar Background (tracks active section scroll)
      --------------------------------------------------------- */
-  const navbar = document.getElementById('navbar');
   let ticking = false;
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        navbar.style.background = window.scrollY > 10
-          ? 'rgba(255,255,255,.92)'
-          : 'rgba(255,255,255,.82)';
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  chapters.forEach(section => {
+    section.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          navbar.style.background = section.scrollTop > 10
+            ? 'rgba(255,255,255,.92)'
+            : 'rgba(255,255,255,.82)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  });
 
 });

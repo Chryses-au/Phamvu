@@ -6,7 +6,7 @@
 /* Reset */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; font-size: 16px; scroll-snap-type: y proximity; }
+html { font-size: 16px; overflow: hidden; height: 100vh; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Inter', Arial, sans-serif;
@@ -15,6 +15,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; height: 100vh;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -118,12 +119,17 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ============================================================
    Sections — General
    ============================================================ */
+main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+
 .section {
-  padding: 80px 0;
-  min-height: 100vh;
-  scroll-snap-align: start;
+  position: absolute; inset: 0;
+  height: 100vh; overflow-y: auto; overflow-x: hidden;
+  padding: 80px 0 40px;
   background: #fff;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .4s ease, visibility .4s ease;
 }
+.section.active { opacity: 1; visibility: visible; pointer-events: auto; }
 
 .section-heading {
   font-size: 2.75rem; font-weight: 700; letter-spacing: -.04em;
@@ -138,8 +144,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    1. Hero
    ============================================================ */
 .section-hero {
-  height: 100vh; display: flex; align-items: center; justify-content: center;
-  padding-top: 48px;
+  display: flex; align-items: center; justify-content: center;
+  padding-top: 48px; overflow: hidden;
 }
 
 .hero {
@@ -151,7 +157,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .hero-photo { margin-bottom: 28px; }
 .hero-headshot {
-  width: 120px; height: 120px; border-radius: 50%;
+  width: 150px; height: 150px; border-radius: 50%;
   object-fit: cover; object-position: center top;
   margin: 0 auto;
   box-shadow: 0 4px 24px rgba(0,0,0,.1);
@@ -198,7 +204,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    ============================================================ */
 .section-process {
   background: #fafafa;
-  height: 100vh; display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
 
 .process-timeline {
@@ -531,7 +538,13 @@ a.patent-card:hover {
 .section-connect {
   text-align: center;
   background: #fafafa;
-  height: 100vh; display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+.section-footer-note {
+  position: absolute; bottom: 20px; left: 0; right: 0;
+  text-align: center; font-size: .75rem; color: #86868b;
 }
 
 .connect-links {
@@ -559,24 +572,18 @@ a.patent-card:hover {
   background: #333; border-color: #333;
 }
 
-/* ============================================================
-   Footer
-   ============================================================ */
-.footer {
-  border-top: 1px solid #e8e8ed; padding: 28px 0; text-align: center;
-}
-.footer p { font-size: .75rem; color: #86868b; }
+/* Footer removed — copyright folded into Contact section */
 
 /* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 640px) {
   .container { padding: 0 24px; }
-  .section { padding: 60px 0; min-height: 100vh; }
+  .section { padding: 60px 0 32px; }
   .section-heading { font-size: 2rem; }
 
   .hero { padding: 60px 24px 40px; }
-  .hero-headshot { width: 100px; height: 100px; }
+  .hero-headshot { width: 120px; height: 120px; }
   .hero-name { font-size: 2.5rem; }
   .hero-value { font-size: .9375rem; }
   .hero-stats { gap: 20px; }
