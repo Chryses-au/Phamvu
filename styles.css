@@ -311,7 +311,7 @@ ul {
 }
 
 .hero {
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,17 +338,19 @@ ul {
 }
 
 .hero-photo {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .hero-headshot {
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+  border: 3px solid #fff;
+  outline: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .hero-tagline {
@@ -360,37 +362,14 @@ ul {
   letter-spacing: -0.01em;
 }
 
-.bio-section {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 40px 60px;
-}
-
-.bio-content {
-  max-width: 720px;
-  margin: 0 auto 48px;
-}
-
-.bio-content p {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #1d1d1f;
-  line-height: 1.7;
-  letter-spacing: -0.01em;
-  margin-bottom: 16px;
-}
-
-.bio-content p:last-child {
-  margin-bottom: 0;
-}
-
 /* ============================================================
    Home — Process Timeline
    ============================================================ */
 .process-section {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 40px 60px;
+  padding: 40px 40px 80px;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .process-timeline {
@@ -531,24 +510,11 @@ ul {
 }
 
 /* ============================================================
-   About / Interests
+   Interests
    ============================================================ */
-.about-interests {
-  max-width: 480px;
-}
-
-.about-interests h4 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #86868b;
-  margin-bottom: 20px;
-}
-
 .interests-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -1038,34 +1004,34 @@ ul {
 /* ============================================================
    Resume
    ============================================================ */
-.resume-intro {
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  margin-bottom: 36px;
-}
-
-.resume-photo {
-  flex-shrink: 0;
-}
-
-.resume-headshot {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-}
-
-.resume-summary {
+.resume-bio {
   max-width: 720px;
+  margin-bottom: 40px;
 }
 
-.resume-summary p {
-  font-size: 0.875rem;
+.resume-bio p {
+  font-size: 0.9375rem;
   color: #424245;
   line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.resume-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.resume-formal-summary {
+  color: #6e6e73 !important;
+  font-size: 0.8125rem !important;
+  border-left: 2px solid #d2d2d7;
+  padding-left: 16px;
+  margin-top: 20px !important;
+}
+
+.resume-interests {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid #e8e8ed;
 }
 
 .resume-section-title {
@@ -1303,18 +1269,6 @@ ul {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .resume-intro {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .resume-headshot {
-    width: 100px;
-    height: 100px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1340,16 +1294,12 @@ ul {
   }
 
   .hero-headshot {
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
   }
 
-  .bio-section {
-    padding: 0 24px 40px;
-  }
-
-  .bio-content p {
-    font-size: 1rem;
+  .interests-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .process-section {
