@@ -6,7 +6,7 @@
 /* Reset */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-snap-type: y proximity; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Inter', Arial, sans-serif;
@@ -41,20 +41,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-@supports (animation-timeline: view()) {
-  .scroll-reveal {
-    animation: fadeUp linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
-    transition: none;
-  }
-  .scroll-reveal.visible {
-    animation: fadeUp linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
-  }
 }
 
 /* ============================================================
@@ -134,12 +120,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    ============================================================ */
 .section {
   padding: 80px 0;
-  opacity: 0; transform: translateY(20px);
-  transition: opacity .6s cubic-bezier(.25,.46,.45,.94),
-              transform .6s cubic-bezier(.25,.46,.45,.94);
+  min-height: 100vh;
+  scroll-snap-align: start;
+  background: #fff;
 }
-.section.visible { opacity: 1; transform: translateY(0); }
-.section.visible.dimmed { opacity: .65; }
 
 .section-heading {
   font-size: 2.75rem; font-weight: 700; letter-spacing: -.04em;
@@ -153,11 +137,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ============================================================
    1. Hero
    ============================================================ */
-.section-hero { padding-top: 48px; }
+.section-hero {
+  height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding-top: 48px;
+}
 
 .hero {
-  min-height: 80vh; display: flex; align-items: center;
-  justify-content: center; text-align: center; padding: 80px 40px 60px;
+  display: flex; align-items: center;
+  justify-content: center; text-align: center; padding: 40px 40px 60px;
 }
 
 .hero-content { max-width: 680px; }
@@ -209,7 +196,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ============================================================
    2. Engineering Process
    ============================================================ */
-.section-process { background: #fafafa; }
+.section-process {
+  background: #fafafa;
+  height: 100vh; display: flex; align-items: center; justify-content: center;
+}
 
 .process-timeline {
   position: relative; display: flex; justify-content: space-between;
@@ -541,6 +531,7 @@ a.patent-card:hover {
 .section-connect {
   text-align: center;
   background: #fafafa;
+  height: 100vh; display: flex; align-items: center; justify-content: center;
 }
 
 .connect-links {
@@ -581,10 +572,10 @@ a.patent-card:hover {
    ============================================================ */
 @media (max-width: 640px) {
   .container { padding: 0 24px; }
-  .section { padding: 60px 0; }
+  .section { padding: 60px 0; min-height: 100vh; }
   .section-heading { font-size: 2rem; }
 
-  .hero { padding: 60px 24px 40px; min-height: 70vh; }
+  .hero { padding: 60px 24px 40px; }
   .hero-headshot { width: 100px; height: 100px; }
   .hero-name { font-size: 2.5rem; }
   .hero-value { font-size: .9375rem; }
