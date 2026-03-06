@@ -36,7 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (goingForward) {
       next.scrollTop = 0;
     } else {
-      next.scrollTop = next.scrollHeight - next.clientHeight;
+      // Non-scrollable sections (overflow:hidden) must always show from top
+      if (getComputedStyle(next).overflowY === 'hidden') {
+        next.scrollTop = 0;
+      } else {
+        next.scrollTop = next.scrollHeight - next.clientHeight;
+      }
     }
     next.classList.add('active');
     currentIndex = index;
@@ -118,10 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
      Touch → Chapter Transition
      --------------------------------------------------------- */
   let touchStartY = 0;
+  let touchStartAtBottom = false;
+  let touchStartAtTop = false;
   const SWIPE_THRESHOLD = 50;
 
   document.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;
+    const active = chapters[currentIndex];
+    const nonScrollable = isNonScrollable(active);
+    touchStartAtBottom = nonScrollable || isAtBottom(active);
+    touchStartAtTop = nonScrollable || isAtTop(active);
   }, { passive: true });
 
   document.addEventListener('touchend', (e) => {
@@ -132,9 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const atBottom = nonScrollable || isAtBottom(active);
     const atTop = nonScrollable || isAtTop(active);
 
-    if (deltaY > SWIPE_THRESHOLD && atBottom) {
+    // Only transition if section was ALREADY at boundary when touch started
+    if (deltaY > SWIPE_THRESHOLD && touchStartAtBottom && atBottom) {
       goToChapter(currentIndex + 1);
-    } else if (deltaY < -SWIPE_THRESHOLD && atTop) {
+    } else if (deltaY < -SWIPE_THRESHOLD && touchStartAtTop && atTop) {
       goToChapter(currentIndex - 1);
     }
   }, { passive: true });

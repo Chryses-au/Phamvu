@@ -157,9 +157,9 @@ main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
 
 .hero-content { max-width: 680px; }
 
-.hero-photo { margin-bottom: 28px; }
+.hero-photo { margin-bottom: 20px; }
 .hero-headshot {
-  width: 260px; height: 260px; border-radius: 50%;
+  width: 220px; height: 220px; border-radius: 50%;
   object-fit: cover; object-position: center top;
   margin: 0 auto;
   box-shadow: 0 4px 24px rgba(0,0,0,.1);
@@ -174,12 +174,12 @@ main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
 
 .hero-title {
   font-size: .8125rem; font-weight: 500; text-transform: uppercase;
-  letter-spacing: .14em; color: #86868b; margin-bottom: 24px;
+  letter-spacing: .14em; color: #86868b; margin-bottom: 16px;
 }
 
 .hero-value {
   font-size: 1.0625rem; color: #424245; line-height: 1.7;
-  max-width: 580px; margin: 0 auto 32px; letter-spacing: -.01em;
+  max-width: 580px; margin: 0 auto 24px; letter-spacing: -.01em;
 }
 
 .hero-stats {
@@ -589,8 +589,9 @@ a.patent-card:hover {
   .section { padding: 60px 0 32px; }
   .section-heading { font-size: 2rem; }
 
-  .hero { padding: 60px 24px 40px; }
-  .hero-headshot { width: 200px; height: 200px; }
+  .section-hero { overflow-y: auto; }
+  .hero { padding: 20px 24px 30px; }
+  .hero-headshot { width: 160px; height: 160px; }
   .hero-name { font-size: 2.5rem; }
   .hero-value { font-size: .9375rem; }
   .hero-stats { gap: 20px; }
