@@ -602,7 +602,7 @@ a.patent-card:hover {
 
   /* Process — disable flex centering so it scrolls naturally on mobile */
   .section-process { display: block; }
-  .section-process > .container { margin-top: 0; margin-bottom: 0; padding-bottom: 60px; }
+  .section-process > .container { margin-top: 0; margin-bottom: 0; padding-bottom: 100px; }
 
   /* Extra bottom breathing room on mobile for content-heavy sections */
   #patents, #resume { padding-bottom: 140px; }
