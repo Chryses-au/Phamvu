@@ -253,6 +253,9 @@ main { position: relative; width: 100%; height: 100vh; overflow: hidden; }
   .phase-node { margin: 0; flex-shrink: 0; }
 }
 
+/* Extra breathing room at bottom of content-heavy sections */
+#portfolio, #patents, #resume { padding-bottom: 100px; }
+
 /* ============================================================
    3. Portfolio — Case Studies
    ============================================================ */

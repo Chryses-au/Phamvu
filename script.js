@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let wheelAccum = 0;
   let lastWheelTime = 0;
-  const WHEEL_TRIGGER = 80;
+  const WHEEL_TRIGGER = 200;
 
   document.addEventListener('wheel', (e) => {
     if (isTransitioning) { e.preventDefault(); return; }
