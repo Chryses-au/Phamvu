@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return el.scrollTop < BOUNDARY_TOL;
   }
   function isNonScrollable(el) {
+    if (getComputedStyle(el).overflowY === 'hidden') return true;
     return el.scrollHeight <= el.clientHeight + BOUNDARY_TOL;
   }
 
