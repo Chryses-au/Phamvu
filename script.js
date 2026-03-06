@@ -1,31 +1,22 @@
-/* ============================================================
-   Bryant Phamvu — Portfolio Website
-   Scroll-driven interactivity
-   ============================================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------------------------------------------------
-     Scroll Reveal — Sections + child elements
+     Scroll Reveal
      --------------------------------------------------------- */
   const sections = document.querySelectorAll('.section');
   const scrollEls = document.querySelectorAll('.scroll-reveal');
 
-  const revealOpts = { threshold: 0.06, rootMargin: '0px 0px -40px 0px' };
-
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, revealOpts);
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 
   sections.forEach(s => revealObserver.observe(s));
   scrollEls.forEach(el => revealObserver.observe(el));
 
   /* ---------------------------------------------------------
-     Active Nav Link — Highlight based on scroll position
+     Active Nav Link
      --------------------------------------------------------- */
   const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
@@ -38,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   sections.forEach(section => navObserver.observe(section));
 
   /* ---------------------------------------------------------
-     Mobile Navigation Toggle
+     Mobile Navigation
      --------------------------------------------------------- */
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -63,36 +54,46 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------------
-     Portfolio Subsector Accordions
+     Case Study Accordions
      --------------------------------------------------------- */
-  document.querySelectorAll('.subsector-toggle').forEach(toggle => {
+  document.querySelectorAll('.case-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
-      const subsector = toggle.closest('.portfolio-subsector');
-      const isOpen = subsector.classList.contains('open');
+      const study = toggle.closest('.case-study');
+      const isOpen = study.classList.contains('open');
 
-      document.querySelectorAll('.portfolio-subsector.open').forEach(open => {
-        if (open !== subsector) {
+      document.querySelectorAll('.case-study.open').forEach(open => {
+        if (open !== study) {
           open.classList.remove('open');
-          open.querySelector('.subsector-toggle').setAttribute('aria-expanded', 'false');
+          open.querySelector('.case-toggle').setAttribute('aria-expanded', 'false');
         }
       });
 
-      subsector.classList.toggle('open', !isOpen);
+      study.classList.toggle('open', !isOpen);
       toggle.setAttribute('aria-expanded', !isOpen);
 
       if (!isOpen) {
-        const gallery = subsector.querySelector('.image-gallery');
+        const gallery = study.querySelector('[data-gallery]');
         if (gallery) initGallery(gallery);
       }
     });
   });
 
   /* ---------------------------------------------------------
-     Resume Accordions
+     Tech Detail Toggles
      --------------------------------------------------------- */
-  document.querySelectorAll('.resume-toggle').forEach(toggle => {
+  document.querySelectorAll('.tech-toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
-      const entry = toggle.closest('.resume-entry');
+      const detail = toggle.closest('.tech-detail');
+      detail.classList.toggle('open');
+    });
+  });
+
+  /* ---------------------------------------------------------
+     Experience Accordions
+     --------------------------------------------------------- */
+  document.querySelectorAll('.exp-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const entry = toggle.closest('.exp-entry');
       const isOpen = entry.classList.contains('open');
       entry.classList.toggle('open', !isOpen);
       toggle.setAttribute('aria-expanded', !isOpen);
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------------
-     Image Gallery Navigation
+     Image Gallery
      --------------------------------------------------------- */
   function initGallery(gallery) {
     const slides = gallery.querySelectorAll('.gallery-slide');
@@ -142,21 +143,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------------
-     Smooth Scroll for Subsector Links
+     Subsector Deep Links
      --------------------------------------------------------- */
   document.querySelectorAll('[data-subsector]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const subsectorId = link.dataset.subsector;
-      const subsector = document.getElementById(subsectorId);
+      const id = link.dataset.subsector;
+      const target = document.getElementById(id);
 
-      if (subsector) {
-        const toggle = subsector.querySelector('.subsector-toggle');
-        if (!subsector.classList.contains('open') && toggle) {
-          toggle.click();
-        }
+      if (target) {
+        const toggle = target.querySelector('.case-toggle');
+        if (!target.classList.contains('open') && toggle) toggle.click();
         setTimeout(() => {
-          subsector.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       }
 
@@ -167,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------------
-     Navbar Background on Scroll
+     Navbar Background
      --------------------------------------------------------- */
   const navbar = document.getElementById('navbar');
   let ticking = false;
@@ -176,8 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!ticking) {
       requestAnimationFrame(() => {
         navbar.style.background = window.scrollY > 10
-          ? 'rgba(255, 255, 255, 0.92)'
-          : 'rgba(255, 255, 255, 0.82)';
+          ? 'rgba(255,255,255,.92)'
+          : 'rgba(255,255,255,.82)';
         ticking = false;
       });
       ticking = true;

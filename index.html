@@ -10,23 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">BP</a>
+      <a href="#hero" class="nav-logo">BP</a>
       <ul class="nav-links">
-        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
         <li class="nav-dropdown">
           <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
           <ul class="dropdown-menu">
-            <li><a href="#dental-implants" data-subsector="dental-implants">Dental Implants</a></li>
-            <li><a href="#orthopedics" data-subsector="orthopedics">Orthopedics — Foot &amp; Ankle</a></li>
-            <li><a href="#endoscopy" data-subsector="endoscopy">Endoscopy Robotics</a></li>
-            <li><a href="#cryoablation" data-subsector="cryoablation">Cryoablation</a></li>
+            <li><a href="#case-cryoablation" data-subsector="case-cryoablation">Cryoablation</a></li>
+            <li><a href="#case-orthopedics" data-subsector="case-orthopedics">Orthopedics</a></li>
+            <li><a href="#case-endoscopy" data-subsector="case-endoscopy">Endoscopy Robotics</a></li>
+            <li><a href="#case-dental" data-subsector="case-dental">Dental Implants</a></li>
           </ul>
         </li>
         <li><a href="#patents" class="nav-link" data-section="patents">Patents</a></li>
         <li><a href="#resume" class="nav-link" data-section="resume">Resume</a></li>
+        <li><a href="#connect" class="nav-link" data-section="connect">Connect</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -37,439 +39,455 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-nav-links">
-      <li><a href="#home" data-section="home">Home</a></li>
+      <li><a href="#hero" data-section="hero">Home</a></li>
       <li>
         <a href="#portfolio" data-section="portfolio">Portfolio</a>
         <ul class="mobile-dropdown">
-          <li><a href="#dental-implants" data-subsector="dental-implants">Dental Implants</a></li>
-          <li><a href="#orthopedics" data-subsector="orthopedics">Orthopedics</a></li>
-          <li><a href="#endoscopy" data-subsector="endoscopy">Endoscopy Robotics</a></li>
-          <li><a href="#cryoablation" data-subsector="cryoablation">Cryoablation</a></li>
+          <li><a href="#case-cryoablation" data-subsector="case-cryoablation">Cryoablation</a></li>
+          <li><a href="#case-orthopedics" data-subsector="case-orthopedics">Orthopedics</a></li>
+          <li><a href="#case-endoscopy" data-subsector="case-endoscopy">Endoscopy Robotics</a></li>
+          <li><a href="#case-dental" data-subsector="case-dental">Dental Implants</a></li>
         </ul>
       </li>
       <li><a href="#patents" data-section="patents">Patents</a></li>
       <li><a href="#resume" data-section="resume">Resume</a></li>
+      <li><a href="#connect" data-section="connect">Connect</a></li>
     </ul>
   </div>
 
   <main>
-    <!-- ============================== HOME ============================== -->
-    <section id="home" class="section section-home">
+
+    <!-- ==================== 1. HERO — IDENTITY ==================== -->
+    <section id="hero" class="section section-hero">
       <div class="hero">
         <div class="hero-content">
           <div class="hero-photo">
-            <img src="IMG_7273.PNG" alt="Bryant Phamvu — Medical Device Engineer" class="hero-headshot">
+            <img src="IMG_7273.PNG" alt="Bryant Phamvu" class="hero-headshot">
           </div>
-          <p class="hero-pre">Medical Device Engineer</p>
-          <h1 class="hero-title">Bryant Phamvu</h1>
-          <p class="hero-tagline">Engineering medical devices from concept to production.</p>
-        </div>
-      </div>
-
-      <div class="process-section">
-        <h2 class="section-heading">Engineering Process</h2>
-        <p class="section-subheading">A proven 5-phase approach to medical device development</p>
-
-        <div class="process-timeline">
-          <div class="process-line"></div>
-
-          <div class="process-phase" data-phase="1">
-            <div class="phase-node">
-              <div class="phase-number">1</div>
+          <h1 class="hero-name">Bryant Phamvu</h1>
+          <p class="hero-title">Medical Device Engineer</p>
+          <p class="hero-value">Mechanical engineer with 10+ years of experience developing complex medical devices across orthopedics, cryoablation, robotics, dental systems, and surgical instrumentation. Experienced in taking devices from concept through validation and manufacturing.</p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
-            <div class="phase-content">
-              <h3>Product Requirements</h3>
-              <div class="phase-details">
-                <ul>
-                  <li>What do customers want?</li>
-                </ul>
-              </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">13</span>
+              <span class="stat-label">Patents Filed</span>
             </div>
-          </div>
-
-          <div class="process-phase" data-phase="2">
-            <div class="phase-node">
-              <div class="phase-number">2</div>
-            </div>
-            <div class="phase-content">
-              <h3>Feasibility</h3>
-              <div class="phase-details">
-                <ul>
-                  <li>Prototypes</li>
-                  <li>Characterization Studies</li>
-                  <li>DFM (Design for Manufacturability)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="3">
-            <div class="phase-node">
-              <div class="phase-number">3</div>
-            </div>
-            <div class="phase-content">
-              <h3>V&amp;V</h3>
-              <div class="phase-details">
-                <ul>
-                  <li>Preliminary Testing</li>
-                  <li>Verification Testing</li>
-                  <li>Test Protocols / Reports</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="4">
-            <div class="phase-node">
-              <div class="phase-number">4</div>
-            </div>
-            <div class="phase-content">
-              <h3>Design Transfer</h3>
-              <div class="phase-details">
-                <ul>
-                  <li>Manufacturing Process</li>
-                  <li>Process Validations</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="5">
-            <div class="phase-node">
-              <div class="phase-number">5</div>
-            </div>
-            <div class="phase-content">
-              <h3>Production &amp; Feedback</h3>
-              <div class="phase-details">
-                <ul>
-                  <li>Customer Feedback</li>
-                  <li>Sustaining</li>
-                </ul>
-              </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">5</span>
+              <span class="stat-label">Device Domains</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================== PORTFOLIO ============================== -->
+    <!-- ==================== 2. ENGINEERING PROCESS ==================== -->
+    <section id="process" class="section section-process">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Development Process</h2>
+        <p class="section-subheading scroll-reveal">A proven approach to medical device development — from unmet clinical need to production.</p>
+
+        <div class="process-timeline scroll-reveal">
+          <div class="process-line"></div>
+
+          <div class="process-phase" data-phase="1">
+            <div class="phase-node"><div class="phase-number">1</div></div>
+            <div class="phase-content">
+              <h3>Requirements</h3>
+              <p class="phase-desc">Define clinical needs and translate them into engineering specifications through stakeholder alignment and market research.</p>
+            </div>
+          </div>
+
+          <div class="process-phase" data-phase="2">
+            <div class="phase-node"><div class="phase-number">2</div></div>
+            <div class="phase-content">
+              <h3>Feasibility</h3>
+              <p class="phase-desc">Prototype rapidly, run characterization studies, and evaluate manufacturability through DFM analysis.</p>
+            </div>
+          </div>
+
+          <div class="process-phase" data-phase="3">
+            <div class="phase-node"><div class="phase-number">3</div></div>
+            <div class="phase-content">
+              <h3>Verification &amp; Validation</h3>
+              <p class="phase-desc">Execute test protocols, document results, and confirm the design meets all safety and performance requirements.</p>
+            </div>
+          </div>
+
+          <div class="process-phase" data-phase="4">
+            <div class="phase-node"><div class="phase-number">4</div></div>
+            <div class="phase-content">
+              <h3>Design Transfer</h3>
+              <p class="phase-desc">Finalize manufacturing processes, validate production tooling, and complete regulatory documentation.</p>
+            </div>
+          </div>
+
+          <div class="process-phase" data-phase="5">
+            <div class="phase-node"><div class="phase-number">5</div></div>
+            <div class="phase-content">
+              <h3>Production</h3>
+              <p class="phase-desc">Launch to market, monitor field performance, and incorporate customer feedback for continuous improvement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. PORTFOLIO — CASE STUDIES ==================== -->
     <section id="portfolio" class="section section-portfolio">
       <div class="container">
-        <h2 class="section-heading">Portfolio</h2>
-        <p class="section-subheading">Medical device projects organized by specialization</p>
+        <h2 class="section-heading scroll-reveal">Portfolio</h2>
+        <p class="section-subheading scroll-reveal">Engineering case studies across medical device domains</p>
 
-        <!-- Subsector A: Dental Implants -->
-        <div class="portfolio-subsector" id="dental-implants">
-          <button class="subsector-toggle" aria-expanded="false">
-            <span class="subsector-title">Dental Implants</span>
-            <span class="subsector-company">Insight Dental Implant System</span>
-            <svg class="subsector-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <!-- Case Study: Cryoablation -->
+        <div class="case-study scroll-reveal" id="case-cryoablation">
+          <button class="case-toggle" aria-expanded="false">
+            <div class="case-preview">
+              <span class="case-domain">Minimally Invasive Oncology</span>
+              <h3 class="case-name">Cryoablation System</h3>
+              <span class="case-company">Varian Medical Systems (Siemens Healthineers)</span>
+            </div>
+            <svg class="case-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="subsector-content">
-            <div class="project-summary">
-              <p>Developed the first all-in-one sterile dental implant product that delivered both the surgical and restorative sides of implant dentistry in a single kit.</p>
-              <div class="key-contributions">
-                <h4>Key Contributions</h4>
+          <div class="case-body">
+            <div class="case-hero-img">
+              <img src="portfolio-images/slide-10_varian-cryoablation-probe.jpg" alt="Cryoprobe anatomy and iceball progression" loading="lazy">
+            </div>
+
+            <div class="case-narrative">
+              <div class="case-section">
+                <h4>Challenge</h4>
+                <p>Develop a minimally invasive cryogenic delivery system capable of controlled thermal ablation of tumors, replacing helium-based systems with a more accessible high-pressure Argon architecture.</p>
+              </div>
+              <div class="case-section">
+                <h4>Bryant's Role</h4>
+                <p>Technical mechanical lead responsible for the mechanical design and DHF ownership of the Gen 2 cryoablation probe — the first helium-free variable probe cryogenic ablation device to market.</p>
+              </div>
+              <div class="case-section">
+                <h4>Engineering Highlights</h4>
                 <ul>
-                  <li>First all-in-one sterile surgical + restorative implant kit</li>
-                  <li>Complete kit design and component specification</li>
-                  <li>Torque wrench rated at 30 N&middot;cm with ratchet indicator</li>
+                  <li>Gen 2 probe enabling multiple iceballs from a single probe with electrical heater for cauterization</li>
+                  <li>First variable multi-probe fixture for accurate iceball layer measurement</li>
+                  <li>DAQ-based data acquisition with custom processing algorithm</li>
+                  <li>Custom heat exchanger design for cryogenic thermal management</li>
+                  <li>Systems operating at &ndash;160&deg;C with optimized heat transfer under extreme thermal gradients</li>
                 </ul>
+              </div>
+              <div class="case-section">
+                <h4>Outcome</h4>
+                <p>Delivered the first helium-free variable probe cryoablation device platform to market. Designed automated test hardware/software enabling parallel multi-device testing, reducing test time by 15% and increasing accuracy by 5%.</p>
               </div>
             </div>
 
-            <div class="image-gallery">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-01_insight-dental-implant-system.jpg" alt="Insight Dental Implant System — Complete kit with surgical and restorative components" loading="lazy">
+            <!-- Expandable Technical Details -->
+            <div class="tech-detail">
+              <button class="tech-toggle">Technical Specifications</button>
+              <div class="tech-panel">
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+                  <tbody>
+                    <tr><td>Freezing Area</td><td>40mm</td></tr>
+                    <tr><td>Lethal Zone</td><td>-20&deg;C to -40&deg;C</td></tr>
+                    <tr><td>Outer Boundary</td><td>-3&deg;C</td></tr>
+                    <tr><td>Kill Radius</td><td>&le;15mm</td></tr>
+                    <tr><td>Gas Supply</td><td>High-pressure Argon</td></tr>
+                    <tr><td>Tumor Center</td><td>20mm from cryoprobe tip (midpoint)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tech-detail">
+              <button class="tech-toggle">Data Acquisition Flow</button>
+              <div class="tech-panel">
+                <div class="flow-diagram">
+                  <div class="flow-node">DAQ 1</div>
+                  <div class="flow-connector">+</div>
+                  <div class="flow-node">DAQ 2</div>
+                  <span class="flow-arrow">&rarr;</span>
+                  <div class="flow-node">Raw Data</div>
+                  <span class="flow-arrow">&rarr;</span>
+                  <div class="flow-node accent">Algorithm Processing</div>
                 </div>
               </div>
             </div>
 
-            <div class="specs-table">
-              <h4>Technical Specifications</h4>
-              <table>
-                <thead><tr><th>Component</th><th>Specification</th></tr></thead>
-                <tbody>
-                  <tr><td>Pilot Drill</td><td>2.0mm</td></tr>
-                  <tr><td>Drill Bits</td><td>3.5mm, 3.8mm, 4.6mm, 5.4mm</td></tr>
-                  <tr><td>Tap</td><td>5.4mm</td></tr>
-                  <tr><td>Hex Drivers</td><td>10mm, 16mm, 22mm</td></tr>
-                  <tr><td>Torque Wrench</td><td>30 N&middot;cm</td></tr>
-                  <tr><td>Locking Screws</td><td>2x</td></tr>
-                  <tr><td>Thumb Drivers</td><td>3x</td></tr>
-                  <tr><td>Parallel Pin</td><td>2.0mm</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="kit-components">
-              <h4>Full Kit Components</h4>
-              <div class="component-tags">
-                <span>Pilot Drill</span><span>Drill Bits (4 sizes)</span><span>Tap</span>
-                <span>Drill Extender</span><span>Temporary Cylinder</span><span>Thumb Drivers (3x)</span>
-                <span>Torque Wrench</span><span>Locking Screws (2x)</span><span>Hex Drivers (3 sizes)</span>
-                <span>Handpiece Implant Driver</span><span>Bone Level Cement-Retained Abutment</span>
-                <span>Implant Analog</span><span>Impression Post</span><span>Thumb Driver Extender</span>
-                <span>Parallel Pin</span><span>Implant Driver</span><span>Bone Level Implant</span>
-                <span>Conical Healing Abutment</span><span>Flared Healing Abutment</span><span>Cover Screw</span>
-              </div>
-            </div>
-
-            <div class="inline-patents">
-              <h4>Related Patent</h4>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Dental Implant Serration &amp; Abutment Locking Feature</span>
+            <div class="tech-detail">
+              <button class="tech-toggle">Related Patents (5)</button>
+              <div class="tech-panel">
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Cryoablation Probe with Ribbed Heat-Transfer Geometry</span></div>
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Coiled Heater Assembly for Rapid Thermal Cycling in Minimally Invasive Devices</span></div>
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Variable Probe — General</span></div>
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Variable Probe — Automated Settings Sensor</span></div>
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Variable Probe — Magnet Actuation</span></div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Subsector B: Orthopedics -->
-        <div class="portfolio-subsector" id="orthopedics">
-          <button class="subsector-toggle" aria-expanded="false">
-            <span class="subsector-title">Orthopedics — Foot &amp; Ankle</span>
-            <span class="subsector-company">Metalogix Orthopedics</span>
-            <svg class="subsector-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <!-- Case Study: Orthopedics -->
+        <div class="case-study scroll-reveal" id="case-orthopedics">
+          <button class="case-toggle" aria-expanded="false">
+            <div class="case-preview">
+              <span class="case-domain">Orthopedics — Foot &amp; Ankle</span>
+              <h3 class="case-name">External Fixation Systems</h3>
+              <span class="case-company">Metalogix Orthopedics</span>
+            </div>
+            <svg class="case-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="subsector-content">
-            <div class="project-summary">
-              <p>Developed external fixators for foot and ankle applications, including the first fixator designed with an open back for patient comfort. Ongoing work on robotic struts and sensor integration around the fixator.</p>
-              <div class="key-contributions">
-                <h4>Key Contributions</h4>
+          <div class="case-body">
+            <div class="case-hero-img">
+              <div class="gallery" data-gallery>
+                <div class="gallery-nav">
+                  <button class="gallery-prev" aria-label="Previous">&larr;</button>
+                  <span class="gallery-counter">1 / 4</span>
+                  <button class="gallery-next" aria-label="Next">&rarr;</button>
+                </div>
+                <div class="gallery-track">
+                  <div class="gallery-slide active">
+                    <img src="portfolio-images/slide-03_metalogix-patents-fixator.jpg" alt="Wire Tensioner Swivel Head and Super Strut patents" loading="lazy">
+                    <p class="gallery-caption">Wire Tensioner Swivel Head and Super Strut patents with full fixator assembly on bone model</p>
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="portfolio-images/slide-04_metalogix-circular-fixator-tibial-nail.jpg" alt="Circular fixator with tibial nail" loading="lazy">
+                    <p class="gallery-caption">Circular fixator combined with tibial nail, rack &amp; pinion concept</p>
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="portfolio-images/slide-05_metalogix-rail-hub-halfpin.jpg" alt="20mm rail system detail" loading="lazy">
+                    <p class="gallery-caption">20mm rail system close-ups, hub and half-pin detail, foot fixator surgical render</p>
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="portfolio-images/slide-06_metalogix-multipin-clamp.jpg" alt="Multi-pin clamp CAD renders" loading="lazy">
+                    <p class="gallery-caption">Multi-pin clamp CAD renders from multiple angles (consulting project)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-narrative">
+              <div class="case-section">
+                <h4>Challenge</h4>
+                <p>Develop external fixation systems for foot and ankle correction that improve patient comfort and simplify surgeon workflow, including the first fixator designed with an open posterior ring.</p>
+              </div>
+              <div class="case-section">
+                <h4>Bryant's Role</h4>
+                <p>Senior R&amp;D Mechanical Engineer owning full lifecycle development of Class II orthopedic external fixation systems, from concept through production transfer.</p>
+              </div>
+              <div class="case-section">
+                <h4>Engineering Highlights</h4>
                 <ul>
                   <li>First open-back fixator design for patient comfort</li>
                   <li>Combined circular fixator with tibial nail using rack &amp; pinion autonomous positioning</li>
                   <li>Robotic struts and sensors integration (ongoing)</li>
                   <li>Multi-pin clamp design (consulting project)</li>
                   <li>20mm rail system with precision measurement markings</li>
+                  <li>Lead-screw, hinge, and ball-and-socket mechanisms reducing OR time</li>
                 </ul>
               </div>
-            </div>
-
-            <div class="image-gallery">
-              <div class="gallery-nav">
-                <button class="gallery-prev" aria-label="Previous image">&larr;</button>
-                <span class="gallery-counter">1 / 4</span>
-                <button class="gallery-next" aria-label="Next image">&rarr;</button>
-              </div>
-              <div class="gallery-track">
-                <div class="gallery-slide active">
-                  <img src="portfolio-images/slide-03_metalogix-patents-fixator.jpg" alt="Wire Tensioner Swivel Head and Super Strut patents, full fixator assembly" loading="lazy">
-                  <p class="gallery-caption">Wire Tensioner Swivel Head and Super Strut patents with full fixator assembly on bone model</p>
-                </div>
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-04_metalogix-circular-fixator-tibial-nail.jpg" alt="Circular fixator combined with tibial nail, rack and pinion concept" loading="lazy">
-                  <p class="gallery-caption">Circular fixator combined with tibial nail, rack &amp; pinion concept</p>
-                </div>
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-05_metalogix-rail-hub-halfpin.jpg" alt="20mm rail system, hub and half-pin detail" loading="lazy">
-                  <p class="gallery-caption">20mm rail system close-ups, hub and half-pin detail, foot fixator surgical render</p>
-                </div>
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-06_metalogix-multipin-clamp.jpg" alt="Multi-pin clamp CAD renders" loading="lazy">
-                  <p class="gallery-caption">Multi-pin clamp CAD renders from multiple angles (consulting project)</p>
-                </div>
+              <div class="case-section">
+                <h4>Outcome</h4>
+                <p>Five issued patents covering external fixation innovations. The open-back design improved patient comfort during treatment, while mechanism designs simplified surgeon workflow and reduced operating room time.</p>
               </div>
             </div>
 
-            <div class="specs-table">
-              <h4>Technical Specifications</h4>
-              <table>
-                <thead><tr><th>Component</th><th>Specification</th></tr></thead>
-                <tbody>
-                  <tr><td>Half-Pin Material</td><td>Stainless Steel 316 LVM</td></tr>
-                  <tr><td>Half-Pin Diameter</td><td>3mm</td></tr>
-                  <tr><td>Half-Pin Type</td><td>Self-tapping / Self-drilling</td></tr>
-                  <tr><td>Rail Length</td><td>20mm</td></tr>
-                  <tr><td>Hub Attachment</td><td>Single-tooth locking design</td></tr>
-                </tbody>
-              </table>
+            <div class="tech-detail">
+              <button class="tech-toggle">Technical Specifications</button>
+              <div class="tech-panel">
+                <table class="spec-table">
+                  <thead><tr><th>Component</th><th>Specification</th></tr></thead>
+                  <tbody>
+                    <tr><td>Half-Pin Material</td><td>Stainless Steel 316 LVM</td></tr>
+                    <tr><td>Half-Pin Diameter</td><td>3mm</td></tr>
+                    <tr><td>Half-Pin Type</td><td>Self-tapping / Self-drilling</td></tr>
+                    <tr><td>Rail Length</td><td>20mm</td></tr>
+                    <tr><td>Hub Attachment</td><td>Single-tooth locking design</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <div class="inline-patents">
-              <h4>Related Patents</h4>
-              <div class="patent-card issued">
-                <span class="patent-status">Issued</span>
-                <span class="patent-title">External Fixation for the Correction of Bone Deformity and Trauma</span>
-                <a href="https://patents.google.com/patent/US10413328B1" target="_blank" rel="noopener" class="patent-number">US10413328B1</a>
-              </div>
-              <div class="patent-card issued">
-                <span class="patent-status">Issued</span>
-                <span class="patent-title">Orthopedic Strut with Lockable Swivel Hinge</span>
-                <a href="https://patents.google.com/patent/US2018368888A1" target="_blank" rel="noopener" class="patent-number">US2018368888A1</a>
-              </div>
-              <div class="patent-card issued">
-                <span class="patent-status">Issued</span>
-                <span class="patent-title">Orthopedic Strut with Multiple Attachment Clamps</span>
-                <a href="https://patents.google.com/patent/US20200054360A1" target="_blank" rel="noopener" class="patent-number">US20200054360A1</a>
-              </div>
-              <div class="patent-card issued">
-                <span class="patent-status">Issued</span>
-                <span class="patent-title">Super Wing Nut and Bolt</span>
-                <a href="https://patents.google.com/patent/US20190262038A1" target="_blank" rel="noopener" class="patent-number">US20190262038A1</a>
-              </div>
-              <div class="patent-card issued">
-                <span class="patent-status">Issued</span>
-                <span class="patent-title">Wire Tensioner with Swivel Hinge</span>
-                <a href="https://patents.google.com/patent/US20190223933A1" target="_blank" rel="noopener" class="patent-number">US20190223933A1</a>
-              </div>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Bone Biopsy Extraction Tool for Hard Bone</span>
+            <div class="tech-detail">
+              <button class="tech-toggle">Related Patents (6)</button>
+              <div class="tech-panel">
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>External Fixation for the Correction of Bone Deformity and Trauma</span><a href="https://patents.google.com/patent/US10413328B1" target="_blank" rel="noopener" class="ip-link">US10413328B1</a></div>
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Orthopedic Strut with Lockable Swivel Hinge</span><a href="https://patents.google.com/patent/US2018368888A1" target="_blank" rel="noopener" class="ip-link">US2018368888A1</a></div>
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Orthopedic Strut with Multiple Attachment Clamps</span><a href="https://patents.google.com/patent/US20200054360A1" target="_blank" rel="noopener" class="ip-link">US20200054360A1</a></div>
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Super Wing Nut and Bolt</span><a href="https://patents.google.com/patent/US20190262038A1" target="_blank" rel="noopener" class="ip-link">US20190262038A1</a></div>
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Wire Tensioner with Swivel Hinge</span><a href="https://patents.google.com/patent/US20190223933A1" target="_blank" rel="noopener" class="ip-link">US20190223933A1</a></div>
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Bone Biopsy Extraction Tool for Hard Bone</span></div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Subsector C: Endoscopy Robotics -->
-        <div class="portfolio-subsector" id="endoscopy">
-          <button class="subsector-toggle" aria-expanded="false">
-            <span class="subsector-title">Surgical Automations — Endoscopy Robotics</span>
-            <span class="subsector-company">Surgical Automations</span>
-            <svg class="subsector-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <!-- Case Study: Endoscopy Robotics -->
+        <div class="case-study scroll-reveal" id="case-endoscopy">
+          <button class="case-toggle" aria-expanded="false">
+            <div class="case-preview">
+              <span class="case-domain">Surgical Robotics</span>
+              <h3 class="case-name">Autonomous Endoscope System</h3>
+              <span class="case-company">Surgical Automations</span>
+            </div>
+            <svg class="case-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="subsector-content">
-            <div class="project-summary">
-              <p>Focused on autonomous endoscope technology. Projects were primarily centered on delivering an endotracheal tube in a trauma application and colonoscopy.</p>
-              <div class="key-contributions">
-                <h4>Key Contributions</h4>
+          <div class="case-body">
+            <div class="case-hero-img">
+              <div class="gallery" data-gallery>
+                <div class="gallery-nav">
+                  <button class="gallery-prev" aria-label="Previous">&larr;</button>
+                  <span class="gallery-counter">1 / 3</span>
+                  <button class="gallery-next" aria-label="Next">&rarr;</button>
+                </div>
+                <div class="gallery-track">
+                  <div class="gallery-slide active">
+                    <img src="portfolio-images/slide-07_surgical-auto-endoscope-patent.jpg" alt="Autonomous Endoscopes patent drawings" loading="lazy">
+                    <p class="gallery-caption">Autonomous Endoscopes patent drawings, circular mechanism with articulating arm segments</p>
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="portfolio-images/slide-08_surgical-auto-portable-concept.jpg" alt="Portable scope concept" loading="lazy">
+                    <p class="gallery-caption">Portable scope concept with bellows-style drive mechanism (shelved — sterility)</p>
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="portfolio-images/slide-09_surgical-auto-final-device.jpg" alt="Final enclosed device" loading="lazy">
+                    <p class="gallery-caption">Final enclosed device with display, articulating arm, internal limit switch layout</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-narrative">
+              <div class="case-section">
+                <h4>Challenge</h4>
+                <p>Create an autonomous endoscopic system for trauma intubation and colonoscopy applications, integrating robotic multi-axis control with patient safety constraints.</p>
+              </div>
+              <div class="case-section">
+                <h4>Bryant's Role</h4>
+                <p>Lead mechanical engineer responsible for the robotic autonomous endoscope system design, integrating motors, leadscrews, couplings, limit switches, and multi-axis sensing.</p>
+              </div>
+              <div class="case-section">
+                <h4>Engineering Highlights</h4>
                 <ul>
                   <li>Autonomous scope for endotracheal tube delivery (trauma application)</li>
-                  <li>Colonoscopy application development</li>
-                  <li>Portable design concept explored (consulted — shelved due to sterility constraints)</li>
+                  <li>Robotic mechanical system replicating modern-day colonoscope movements</li>
+                  <li>Flexible bending section reducing joint stress and improving articulation reliability</li>
+                  <li>Custom heat-sink solutions protecting embedded sensors for patient safety</li>
                   <li>Final enclosed unit with display screen and articulating arm</li>
                 </ul>
               </div>
-            </div>
-
-            <div class="image-gallery">
-              <div class="gallery-nav">
-                <button class="gallery-prev" aria-label="Previous image">&larr;</button>
-                <span class="gallery-counter">1 / 3</span>
-                <button class="gallery-next" aria-label="Next image">&rarr;</button>
-              </div>
-              <div class="gallery-track">
-                <div class="gallery-slide active">
-                  <img src="portfolio-images/slide-07_surgical-auto-endoscope-patent.jpg" alt="Autonomous Endoscopes patent drawings" loading="lazy">
-                  <p class="gallery-caption">Autonomous Endoscopes patent drawings, circular mechanism with articulating arm segments</p>
-                </div>
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-08_surgical-auto-portable-concept.jpg" alt="Portable scope concept with bellows-style drive" loading="lazy">
-                  <p class="gallery-caption">Portable scope concept with bellows-style drive mechanism (shelved — sterility)</p>
-                </div>
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-09_surgical-auto-final-device.jpg" alt="Final enclosed device with display and articulating arm" loading="lazy">
-                  <p class="gallery-caption">Final enclosed device with display, articulating arm, internal limit switch layout</p>
-                </div>
+              <div class="case-section">
+                <h4>Outcome</h4>
+                <p>Patented system for automated endoscopic navigation and control. Portable concept explored but shelved due to sterility constraints; final design achieved enclosed clinical-grade form factor.</p>
               </div>
             </div>
 
-            <div class="specs-table">
-              <h4>Technical Specifications</h4>
-              <table>
-                <thead><tr><th>Component</th><th>Specification</th></tr></thead>
-                <tbody>
-                  <tr><td>Limit Switch</td><td>Omron D2F</td></tr>
-                  <tr><td>Z-Axis Switches</td><td>3x (fixed)</td></tr>
-                  <tr><td>X-Y Axis Switches</td><td>6x (on X-Y motors)</td></tr>
-                  <tr><td>Chassis Dimensions</td><td>5.72" &times; 5.45"</td></tr>
-                  <tr><td>Clearance</td><td>0.256"</td></tr>
-                </tbody>
-              </table>
+            <div class="tech-detail">
+              <button class="tech-toggle">Technical Specifications</button>
+              <div class="tech-panel">
+                <table class="spec-table">
+                  <thead><tr><th>Component</th><th>Specification</th></tr></thead>
+                  <tbody>
+                    <tr><td>Limit Switch</td><td>Omron D2F</td></tr>
+                    <tr><td>Z-Axis Switches</td><td>3x (fixed)</td></tr>
+                    <tr><td>X-Y Axis Switches</td><td>6x (on X-Y motors)</td></tr>
+                    <tr><td>Chassis Dimensions</td><td>5.72" &times; 5.45"</td></tr>
+                    <tr><td>Clearance</td><td>0.256"</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <div class="inline-patents">
-              <h4>Related Patent</h4>
-              <div class="patent-card issued">
-                <span class="patent-status">Issued</span>
-                <span class="patent-title">System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</span>
-                <a href="https://patents.google.com/patent/US2022217970863" target="_blank" rel="noopener" class="patent-number">US2022217970863</a>
+            <div class="tech-detail">
+              <button class="tech-toggle">Related Patent</button>
+              <div class="tech-panel">
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</span><a href="https://patents.google.com/patent/US2022217970863" target="_blank" rel="noopener" class="ip-link">US2022217970863</a></div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Subsector D: Cryoablation -->
-        <div class="portfolio-subsector" id="cryoablation">
-          <button class="subsector-toggle" aria-expanded="false">
-            <span class="subsector-title">Cryoablation — Minimally Invasive Oncology</span>
-            <span class="subsector-company">Varian Medical Systems (Siemens Healthineers)</span>
-            <svg class="subsector-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <!-- Case Study: Dental Implants -->
+        <div class="case-study scroll-reveal" id="case-dental">
+          <button class="case-toggle" aria-expanded="false">
+            <div class="case-preview">
+              <span class="case-domain">Dental Implant Systems</span>
+              <h3 class="case-name">All-in-One Sterile Implant Kit</h3>
+              <span class="case-company">Insight Dental Systems</span>
+            </div>
+            <svg class="case-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="subsector-content">
-            <div class="project-summary">
-              <p>Minimally invasive tumor ablation using cryogenic temperatures. Current technical lead on the Gen 2 cryoablation probe enabling multiple iceballs from a single probe with electrical cauterization capability.</p>
-              <div class="key-contributions">
-                <h4>Key Contributions</h4>
+          <div class="case-body">
+            <div class="case-hero-img">
+              <img src="portfolio-images/slide-01_insight-dental-implant-system.jpg" alt="Insight Dental Implant System" loading="lazy">
+            </div>
+
+            <div class="case-narrative">
+              <div class="case-section">
+                <h4>Challenge</h4>
+                <p>Design the first all-in-one sterile dental implant product that delivers both surgical and restorative components in a single kit, reducing procedure time and simplifying inventory.</p>
+              </div>
+              <div class="case-section">
+                <h4>Bryant's Role</h4>
+                <p>R&amp;D Mechanical Engineer contributing to the design of a Class II dental implant system, responsible for kit design, component specification, and torque-limiting mechanisms.</p>
+              </div>
+              <div class="case-section">
+                <h4>Engineering Highlights</h4>
                 <ul>
-                  <li>Gen 2 probe: multiple iceballs from one probe + electrical heater for cauterization</li>
-                  <li>First variable multi-probe fixture for accurate iceball layer measurement</li>
-                  <li>DAQ-based data acquisition with custom processing algorithm</li>
-                  <li>Custom heat exchanger design</li>
+                  <li>First all-in-one sterile surgical + restorative implant kit</li>
+                  <li>Complete kit design with 20+ precision components</li>
+                  <li>Torque wrench rated at 30 N&middot;cm with ratchet indicator</li>
+                  <li>Guided surgical kit reducing required drill bits per procedure by 50%</li>
                 </ul>
               </div>
+              <div class="case-section">
+                <h4>Outcome</h4>
+                <p>Delivered a Class II dental implant system that reduced surgical time by 10 minutes and manufacturing cost by 3%. Supported full DHF including feasibility studies, V&amp;V protocols, dFMEA, and traceability.</p>
+              </div>
             </div>
 
-            <div class="image-gallery">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="portfolio-images/slide-10_varian-cryoablation-probe.jpg" alt="Cryoprobe anatomy, iceball progression, temperature boundaries, DAQ flow" loading="lazy">
-                  <p class="gallery-caption">Cryoprobe anatomy diagram, iceball size progression, freezing zone cross-section with temperature boundaries, DAQ data acquisition flow</p>
+            <div class="tech-detail">
+              <button class="tech-toggle">Technical Specifications</button>
+              <div class="tech-panel">
+                <table class="spec-table">
+                  <thead><tr><th>Component</th><th>Specification</th></tr></thead>
+                  <tbody>
+                    <tr><td>Pilot Drill</td><td>2.0mm</td></tr>
+                    <tr><td>Drill Bits</td><td>3.5mm, 3.8mm, 4.6mm, 5.4mm</td></tr>
+                    <tr><td>Tap</td><td>5.4mm</td></tr>
+                    <tr><td>Hex Drivers</td><td>10mm, 16mm, 22mm</td></tr>
+                    <tr><td>Torque Wrench</td><td>30 N&middot;cm</td></tr>
+                    <tr><td>Locking Screws</td><td>2x</td></tr>
+                    <tr><td>Thumb Drivers</td><td>3x</td></tr>
+                    <tr><td>Parallel Pin</td><td>2.0mm</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tech-detail">
+              <button class="tech-toggle">Full Kit Components (20)</button>
+              <div class="tech-panel">
+                <div class="component-tags">
+                  <span>Pilot Drill</span><span>Drill Bits (4 sizes)</span><span>Tap</span>
+                  <span>Drill Extender</span><span>Temporary Cylinder</span><span>Thumb Drivers (3x)</span>
+                  <span>Torque Wrench</span><span>Locking Screws (2x)</span><span>Hex Drivers (3 sizes)</span>
+                  <span>Handpiece Implant Driver</span><span>Bone Level Cement-Retained Abutment</span>
+                  <span>Implant Analog</span><span>Impression Post</span><span>Thumb Driver Extender</span>
+                  <span>Parallel Pin</span><span>Implant Driver</span><span>Bone Level Implant</span>
+                  <span>Conical Healing Abutment</span><span>Flared Healing Abutment</span><span>Cover Screw</span>
                 </div>
               </div>
             </div>
 
-            <div class="specs-table">
-              <h4>Technical Specifications</h4>
-              <table>
-                <thead><tr><th>Component</th><th>Specification</th></tr></thead>
-                <tbody>
-                  <tr><td>Freezing Area</td><td>40mm</td></tr>
-                  <tr><td>Lethal Zone</td><td>-20&deg;C to -40&deg;C</td></tr>
-                  <tr><td>Outer Boundary</td><td>-3&deg;C</td></tr>
-                  <tr><td>Kill Radius</td><td>&le;15mm</td></tr>
-                  <tr><td>Gas Supply</td><td>High-pressure Argon</td></tr>
-                  <tr><td>Tumor Center</td><td>20mm from cryoprobe tip (midpoint)</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="data-flow">
-              <h4>Data Acquisition Flow</h4>
-              <div class="flow-diagram">
-                <div class="flow-node">DAQ 1</div>
-                <div class="flow-connector">+</div>
-                <div class="flow-node">DAQ 2</div>
-                <div class="flow-arrow">&rarr;</div>
-                <div class="flow-node">Raw Data</div>
-                <div class="flow-arrow">&rarr;</div>
-                <div class="flow-node accent">Algorithm Processing</div>
-              </div>
-            </div>
-
-            <div class="inline-patents">
-              <h4>Related Patents</h4>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Cryoablation Probe with Ribbed Heat-Transfer Geometry</span>
-              </div>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Coiled Heater Assembly for Rapid Thermal Cycling in Minimally Invasive Devices</span>
-              </div>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Variable Probe — General</span>
-              </div>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Variable Probe — Automated Settings Sensor</span>
-              </div>
-              <div class="patent-card pending">
-                <span class="patent-status">Pending</span>
-                <span class="patent-title">Variable Probe — Magnet Actuation</span>
+            <div class="tech-detail">
+              <button class="tech-toggle">Related Patent</button>
+              <div class="tech-panel">
+                <div class="inline-patent pending"><span class="ip-badge">Pending</span><span>Dental Implant Serration &amp; Abutment Locking Feature</span></div>
               </div>
             </div>
           </div>
@@ -477,200 +495,121 @@
       </div>
     </section>
 
-    <!-- ============================== PATENTS ============================== -->
+    <!-- ==================== 4. PATENTS ==================== -->
     <section id="patents" class="section section-patents">
       <div class="container">
-        <h2 class="section-heading">Patents</h2>
-        <p class="section-subheading">Issued and pending intellectual property</p>
+        <h2 class="section-heading scroll-reveal">Patents</h2>
+        <p class="section-subheading scroll-reveal">6 issued &middot; 7 pending</p>
 
-        <div class="patents-group">
-          <h3>Issued Patents — Orthopedic</h3>
-          <p class="patents-group-sub">Metalogix Orthopedics</p>
-          <div class="patents-list">
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge issued">Issued</span>
-                <span class="patent-name">External Fixation for the Correction of Bone Deformity and Trauma</span>
-              </div>
-              <a href="https://patents.google.com/patent/US10413328B1" target="_blank" rel="noopener" class="patent-link">US10413328B1 &nearr;</a>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge issued">Issued</span>
-                <span class="patent-name">Orthopedic Strut with Lockable Swivel Hinge</span>
-              </div>
-              <a href="https://patents.google.com/patent/US2018368888A1" target="_blank" rel="noopener" class="patent-link">US2018368888A1 &nearr;</a>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge issued">Issued</span>
-                <span class="patent-name">Orthopedic Strut with Multiple Attachment Clamps</span>
-              </div>
-              <a href="https://patents.google.com/patent/US20200054360A1" target="_blank" rel="noopener" class="patent-link">US20200054360A1 &nearr;</a>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge issued">Issued</span>
-                <span class="patent-name">Super Wing Nut and Bolt</span>
-              </div>
-              <a href="https://patents.google.com/patent/US20190262038A1" target="_blank" rel="noopener" class="patent-link">US20190262038A1 &nearr;</a>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge issued">Issued</span>
-                <span class="patent-name">Wire Tensioner with Swivel Hinge</span>
-              </div>
-              <a href="https://patents.google.com/patent/US20190223933A1" target="_blank" rel="noopener" class="patent-link">US20190223933A1 &nearr;</a>
-            </div>
+        <div class="patent-grid">
+
+          <a href="https://patents.google.com/patent/US10413328B1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge issued">Issued</span>
+            <h3 class="pc-title">External Fixation for the Correction of Bone Deformity and Trauma</h3>
+            <span class="pc-number">US10413328B1</span>
+            <span class="pc-domain">Orthopedics</span>
+          </a>
+
+          <a href="https://patents.google.com/patent/US2018368888A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge issued">Issued</span>
+            <h3 class="pc-title">Orthopedic Strut with Lockable Swivel Hinge</h3>
+            <span class="pc-number">US2018368888A1</span>
+            <span class="pc-domain">Orthopedics</span>
+          </a>
+
+          <a href="https://patents.google.com/patent/US20200054360A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge issued">Issued</span>
+            <h3 class="pc-title">Orthopedic Strut with Multiple Attachment Clamps</h3>
+            <span class="pc-number">US20200054360A1</span>
+            <span class="pc-domain">Orthopedics</span>
+          </a>
+
+          <a href="https://patents.google.com/patent/US20190262038A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge issued">Issued</span>
+            <h3 class="pc-title">Super Wing Nut and Bolt</h3>
+            <span class="pc-number">US20190262038A1</span>
+            <span class="pc-domain">Orthopedics</span>
+          </a>
+
+          <a href="https://patents.google.com/patent/US20190223933A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge issued">Issued</span>
+            <h3 class="pc-title">Wire Tensioner with Swivel Hinge</h3>
+            <span class="pc-number">US20190223933A1</span>
+            <span class="pc-domain">Orthopedics</span>
+          </a>
+
+          <a href="https://patents.google.com/patent/US2022217970863" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge issued">Issued</span>
+            <h3 class="pc-title">System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</h3>
+            <span class="pc-number">US2022217970863</span>
+            <span class="pc-domain">Surgical Robotics</span>
+          </a>
+
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Dental Implant Serration &amp; Abutment Locking Feature</h3>
+            <span class="pc-domain">Dental Implants</span>
           </div>
-        </div>
 
-        <div class="patents-group">
-          <h3>Issued Patents — Endoscopic Navigation &amp; Control</h3>
-          <div class="patents-list">
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge issued">Issued</span>
-                <span class="patent-name">System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</span>
-              </div>
-              <a href="https://patents.google.com/patent/US2022217970863" target="_blank" rel="noopener" class="patent-link">US2022217970863 &nearr;</a>
-            </div>
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Bone Biopsy Extraction Tool for Hard Bone</h3>
+            <span class="pc-domain">Orthopedics</span>
           </div>
-        </div>
 
-        <div class="patents-group">
-          <h3>Pending Patents</h3>
-          <div class="patents-list">
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Dental Implant Serration &amp; Abutment Locking Feature</span>
-              </div>
-              <span class="patent-category">Dental Implants</span>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Bone Biopsy Extraction Tool for Hard Bone</span>
-              </div>
-              <span class="patent-category">Orthopedics</span>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Cryoablation Probe with Ribbed Heat-Transfer Geometry</span>
-              </div>
-              <span class="patent-category">Cryoablation</span>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Coiled Heater Assembly for Rapid Thermal Cycling in Minimally Invasive Devices</span>
-              </div>
-              <span class="patent-category">Cryoablation</span>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Variable Probe — General</span>
-              </div>
-              <span class="patent-category">Cryoablation</span>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Variable Probe — Automated Settings Sensor</span>
-              </div>
-              <span class="patent-category">Cryoablation</span>
-            </div>
-            <div class="patent-row">
-              <div class="patent-info">
-                <span class="patent-badge pending">Pending</span>
-                <span class="patent-name">Variable Probe — Magnet Actuation</span>
-              </div>
-              <span class="patent-category">Cryoablation</span>
-            </div>
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Cryoablation Probe with Ribbed Heat-Transfer Geometry</h3>
+            <span class="pc-domain">Cryoablation</span>
+          </div>
+
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Coiled Heater Assembly for Rapid Thermal Cycling</h3>
+            <span class="pc-domain">Cryoablation</span>
+          </div>
+
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Variable Probe — General</h3>
+            <span class="pc-domain">Cryoablation</span>
+          </div>
+
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Variable Probe — Automated Settings Sensor</h3>
+            <span class="pc-domain">Cryoablation</span>
+          </div>
+
+          <div class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Variable Probe — Magnet Actuation</h3>
+            <span class="pc-domain">Cryoablation</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================== RESUME ============================== -->
+    <!-- ==================== 5. RESUME ==================== -->
     <section id="resume" class="section section-resume">
       <div class="container">
-        <h2 class="section-heading">Resume</h2>
-        <p class="section-subheading">Professional experience in medical device development</p>
-
-        <div class="resume-bio">
-          <p>
-            Bryant is a medical device engineer specializing in taking products from initial concept
-            through full-scale production. With experience spanning startups and established
-            medical technology companies, he brings a hands-on, end-to-end approach to device
-            development — from requirements gathering and feasibility studies through verification,
-            validation, and design transfer.
-          </p>
-          <p>
-            His work spans orthopedics, dental implants, surgical robotics, and minimally invasive
-            oncology. Bryant has contributed to multiple issued and pending patents, reflecting his
-            drive to innovate within the constraints of regulatory and manufacturing requirements.
-          </p>
-          <p class="resume-formal-summary">
-            A background of a CNC machinist that is a Mechanical Engineer with 10+ years of experience developing electromechanical, robotic, and minimally invasive medical systems. Skilled in precision mechanisms, thermal systems, high&#8209;pressure gas flow, sensor integration, DFM/DFA, GD&amp;T, dFMEA, root-cause/corrective actions, and V&amp;V within ISO 13485 and Class II environments.
-          </p>
-        </div>
-
-        <!-- Core Technical Skills -->
-        <div class="resume-skills">
-          <h3 class="resume-section-title">Core Technical Skills</h3>
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h4>CAD &amp; Analysis</h4>
-              <p>SolidWorks, GD&amp;T, tolerance analysis, FEA</p>
-            </div>
-            <div class="skill-category">
-              <h4>Electromechanical</h4>
-              <p>Motors, leadscrews, robotics, sensors, motion systems, EPROM, RFID</p>
-            </div>
-            <div class="skill-category">
-              <h4>Thermal &amp; Fluids</h4>
-              <p>Cryogenic systems, heat exchangers, heat sinks, gas flow</p>
-            </div>
-            <div class="skill-category">
-              <h4>Manufacturing</h4>
-              <p>Machining, EDM, laser-cutting, grinding, 3D printing, fixture/tooling design, DFM/DFA</p>
-            </div>
-            <div class="skill-category">
-              <h4>Testing</h4>
-              <p>Test fixtures, data acquisition, V&amp;V, root-cause analysis</p>
-            </div>
-            <div class="skill-category">
-              <h4>Regulatory</h4>
-              <p>ISO 13485, 21 CFR 820, DHF, dFMEA, risk management</p>
-            </div>
-            <div class="skill-category">
-              <h4>Software</h4>
-              <p>MATLAB, LabVIEW, MS Office, Lumafield CT</p>
-            </div>
-            <div class="skill-category">
-              <h4>Domains</h4>
-              <p>Medical devices, surgical tools, cryogenic systems, electromechanical assemblies</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="section-heading scroll-reveal">Experience</h2>
+        <p class="section-subheading scroll-reveal">Professional background in medical device engineering</p>
 
         <!-- Professional Experience -->
-        <h3 class="resume-section-title">Professional Experience</h3>
-        <div class="resume-timeline">
-          <div class="resume-entry">
-            <button class="resume-toggle" aria-expanded="false">
-              <div class="resume-header">
-                <h3 class="resume-role">R&amp;D Mechanical Engineer</h3>
-                <span class="resume-company">Varian Medical (Siemens Healthineers)</span>
-                <span class="resume-dates">Nov 2021 &ndash; Present</span>
+        <div class="resume-block scroll-reveal">
+          <h3 class="resume-block-title">Professional Experience</h3>
+
+          <div class="exp-entry">
+            <button class="exp-toggle" aria-expanded="false">
+              <div class="exp-header">
+                <h4 class="exp-role">R&amp;D Mechanical Engineer</h4>
+                <span class="exp-company">Varian Medical (Siemens Healthineers)</span>
               </div>
-              <svg class="resume-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="exp-dates">Nov 2021 &ndash; Present</span>
+              <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="resume-details">
+            <div class="exp-details">
               <ul>
                 <li>Technical mechanical lead in mechanical design and DHF ownership for the first helium-free variable probe cryogenic ablation device out in the market using high-pressure Argon, custom heat exchangers, and thermal management components.</li>
                 <li>Engineered systems operating at &ndash;160&deg;C, optimizing heat transfer and structural integrity under extreme thermal gradients.</li>
@@ -683,16 +622,16 @@
             </div>
           </div>
 
-          <div class="resume-entry">
-            <button class="resume-toggle" aria-expanded="false">
-              <div class="resume-header">
-                <h3 class="resume-role">R&amp;D Lead Mechanical Engineer</h3>
-                <span class="resume-company">Surgical Automations</span>
-                <span class="resume-dates">Jan 2021 &ndash; Nov 2021</span>
+          <div class="exp-entry">
+            <button class="exp-toggle" aria-expanded="false">
+              <div class="exp-header">
+                <h4 class="exp-role">R&amp;D Lead Mechanical Engineer</h4>
+                <span class="exp-company">Surgical Automations</span>
               </div>
-              <svg class="resume-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="exp-dates">Jan 2021 &ndash; Nov 2021</span>
+              <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="resume-details">
+            <div class="exp-details">
               <ul>
                 <li>Lead mechanical design for a robotic autonomous endoscope system integrating motors, leadscrews, couplings, limit switches, and multi-axis sensing.</li>
                 <li>Developed a robotic mechanical system to replicate modern-day colonoscope movements.</li>
@@ -703,16 +642,16 @@
             </div>
           </div>
 
-          <div class="resume-entry">
-            <button class="resume-toggle" aria-expanded="false">
-              <div class="resume-header">
-                <h3 class="resume-role">Manufacturing Manager / Mechanical Engineer</h3>
-                <span class="resume-company">Platron Manufacturing</span>
-                <span class="resume-dates">Jan 2020 &ndash; Jan 2021</span>
+          <div class="exp-entry">
+            <button class="exp-toggle" aria-expanded="false">
+              <div class="exp-header">
+                <h4 class="exp-role">Manufacturing Manager / Mechanical Engineer</h4>
+                <span class="exp-company">Platron Manufacturing</span>
               </div>
-              <svg class="resume-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="exp-dates">Jan 2020 &ndash; Jan 2021</span>
+              <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="resume-details">
+            <div class="exp-details">
               <ul>
                 <li>Managed multiple production processes, improving scrap rate by 3% and lead time by 6%.</li>
                 <li>Designed tooling, fixtures, and jigs supporting precision machining and assembly. Redesigned fixtures to handle multiple jobs, decreasing machine set-up times.</li>
@@ -721,16 +660,16 @@
             </div>
           </div>
 
-          <div class="resume-entry">
-            <button class="resume-toggle" aria-expanded="false">
-              <div class="resume-header">
-                <h3 class="resume-role">Senior R&amp;D Mechanical Engineer</h3>
-                <span class="resume-company">Metalogix Orthopedics</span>
-                <span class="resume-dates">May 2017 &ndash; Jan 2020</span>
+          <div class="exp-entry">
+            <button class="exp-toggle" aria-expanded="false">
+              <div class="exp-header">
+                <h4 class="exp-role">Senior R&amp;D Mechanical Engineer</h4>
+                <span class="exp-company">Metalogix Orthopedics</span>
               </div>
-              <svg class="resume-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="exp-dates">May 2017 &ndash; Jan 2020</span>
+              <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="resume-details">
+            <div class="exp-details">
               <ul>
                 <li>Owned full lifecycle development of Class II orthopedic external fixation systems, including the first open posterior fixation ring improving patient comfort.</li>
                 <li>Designed mechanisms (lead-screw, hinge, ball-and-socket) reducing OR time and simplifying surgeon workflow.</li>
@@ -740,16 +679,16 @@
             </div>
           </div>
 
-          <div class="resume-entry">
-            <button class="resume-toggle" aria-expanded="false">
-              <div class="resume-header">
-                <h3 class="resume-role">R&amp;D Mechanical Engineer</h3>
-                <span class="resume-company">Insight Dental Systems</span>
-                <span class="resume-dates">2014 &ndash; 2017</span>
+          <div class="exp-entry">
+            <button class="exp-toggle" aria-expanded="false">
+              <div class="exp-header">
+                <h4 class="exp-role">R&amp;D Mechanical Engineer</h4>
+                <span class="exp-company">Insight Dental Systems</span>
               </div>
-              <svg class="resume-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <span class="exp-dates">2014 &ndash; 2017</span>
+              <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="resume-details">
+            <div class="exp-details">
               <ul>
                 <li>Contributed to the design of a Class II all-in-one sterile dental implant system, reducing surgical time by 10 minutes and manufacturing cost by 3%.</li>
                 <li>Developed a guided surgical kit reducing required drill bits per procedure by 50%.</li>
@@ -761,71 +700,99 @@
         </div>
 
         <!-- Education -->
-        <div class="resume-education">
-          <h3 class="resume-section-title">Education</h3>
-          <div class="education-entry">
+        <div class="resume-block scroll-reveal">
+          <h3 class="resume-block-title">Education</h3>
+          <div class="edu-entry">
             <h4>B.S. Mechanical Engineering</h4>
             <span>University of Texas at San Antonio, 2014</span>
           </div>
         </div>
 
-        <!-- Additional Information -->
-        <div class="resume-additional">
-          <p>Patents can be seen in portfolio along with images of projects. References upon request.</p>
+        <!-- Core Skills -->
+        <div class="resume-block scroll-reveal">
+          <h3 class="resume-block-title">Core Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Mechanical Engineering</h4>
+              <p>SolidWorks, GD&amp;T, tolerance analysis, FEA, precision mechanisms, fixture &amp; tooling design</p>
+            </div>
+            <div class="skill-group">
+              <h4>Electromechanical Systems</h4>
+              <p>Motors, leadscrews, robotics, sensors, motion systems, EPROM, RFID</p>
+            </div>
+            <div class="skill-group">
+              <h4>Thermal &amp; Fluids</h4>
+              <p>Cryogenic systems, heat exchangers, heat sinks, high-pressure gas flow</p>
+            </div>
+            <div class="skill-group">
+              <h4>Medical Device Regulatory</h4>
+              <p>ISO 13485, 21 CFR 820, DHF, dFMEA, risk management, Class II devices</p>
+            </div>
+            <div class="skill-group">
+              <h4>Manufacturing &amp; Validation</h4>
+              <p>Machining, EDM, laser-cutting, grinding, 3D printing, DFM/DFA, V&amp;V, root-cause analysis</p>
+            </div>
+            <div class="skill-group">
+              <h4>Engineering Software</h4>
+              <p>MATLAB, LabVIEW, MS Office, Lumafield CT, data acquisition systems</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Beyond Engineering -->
-        <div class="resume-interests">
-          <h3 class="resume-section-title">Beyond Engineering</h3>
-          <div class="interests-grid">
-            <div class="interest-item">
-              <div class="interest-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M12 2a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-              </div>
+        <!-- Interests -->
+        <div class="resume-block scroll-reveal">
+          <h3 class="resume-block-title">Beyond Engineering</h3>
+          <div class="interests-row">
+            <div class="interest-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M12 2a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
               <span>Muay Thai</span>
             </div>
-            <div class="interest-item">
-              <div class="interest-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M14.5 9l-5 5"/><path d="M9.5 9h5v5"/></svg>
-              </div>
+            <div class="interest-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M14.5 9l-5 5"/><path d="M9.5 9h5v5"/></svg>
               <span>Fitness</span>
             </div>
-            <div class="interest-item">
-              <div class="interest-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </div>
+            <div class="interest-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               <span>Adventure</span>
             </div>
-            <div class="interest-item">
-              <div class="interest-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22l4-4"/><path d="M6 18L18 6"/><path d="M18 6l4 4-6 6"/><path d="M2 22l6-6"/></svg>
-              </div>
+            <div class="interest-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22l4-4"/><path d="M6 18L18 6"/><path d="M18 6l4 4-6 6"/><path d="M2 22l6-6"/></svg>
               <span>Snowboarding</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ==================== 6. CONNECT ==================== -->
+    <section id="connect" class="section section-connect">
+      <div class="container">
+        <h2 class="section-heading scroll-reveal">Connect with Bryant</h2>
+        <p class="section-subheading scroll-reveal">Open to opportunities in medical device engineering and advanced hardware systems.</p>
+        <div class="connect-links scroll-reveal">
+          <a href="https://www.linkedin.com/in/bryant-phamvu-a9a4605b/" target="_blank" rel="noopener" class="connect-btn primary">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn Profile
+          </a>
+          <a href="mailto:Bryantphamvu@yahoo.com" class="connect-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Bryantphamvu@yahoo.com
+          </a>
+          <a href="tel:5129141524" class="connect-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (512) 914-1524
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-info">
-          <p class="footer-name">Bryant Phamvu</p>
-          <p class="footer-title">Medical Device Engineer</p>
-        </div>
-        <div class="footer-contact">
-          <a href="tel:5129141524" class="footer-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (512) 914-1524
-          </a>
-          <a href="mailto:Bryantphamvu@yahoo.com" class="footer-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Bryantphamvu@yahoo.com
-          </a>
-        </div>
+        <p>&copy; Bryant Phamvu &middot; Medical Device Engineer</p>
       </div>
     </div>
   </footer>
