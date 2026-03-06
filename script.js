@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNav(index);
     triggerReveals(next);
 
-    setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
+    setTimeout(() => { isTransitioning = false; wheelAccum = 0; }, TRANSITION_MS + 300);
   }
 
   chapters[0].classList.add('active');
@@ -78,10 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return el.scrollHeight <= el.clientHeight + BOUNDARY_TOL;
   }
 
-  let wheelCooldown = false;
+  let wheelAccum = 0;
+  let lastWheelTime = 0;
+  const WHEEL_TRIGGER = 80;
 
   document.addEventListener('wheel', (e) => {
-    if (isTransitioning || wheelCooldown) return;
+    if (isTransitioning) { e.preventDefault(); return; }
+
+    const now = Date.now();
+    if (now - lastWheelTime > 250) wheelAccum = 0;
+    lastWheelTime = now;
 
     const active = chapters[currentIndex];
     const nonScrollable = isNonScrollable(active);
@@ -90,14 +96,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.deltaY > 0 && atBottom) {
       e.preventDefault();
-      wheelCooldown = true;
-      goToChapter(currentIndex + 1);
-      setTimeout(() => { wheelCooldown = false; }, TRANSITION_MS + 200);
+      wheelAccum += e.deltaY;
+      if (wheelAccum >= WHEEL_TRIGGER) {
+        goToChapter(currentIndex + 1);
+        wheelAccum = 0;
+      }
     } else if (e.deltaY < 0 && atTop) {
       e.preventDefault();
-      goToChapter(currentIndex - 1);
-      wheelCooldown = true;
-      setTimeout(() => { wheelCooldown = false; }, TRANSITION_MS + 200);
+      wheelAccum += e.deltaY;
+      if (wheelAccum <= -WHEEL_TRIGGER) {
+        goToChapter(currentIndex - 1);
+        wheelAccum = 0;
+      }
+    } else {
+      wheelAccum = 0;
     }
   }, { passive: false });
 
