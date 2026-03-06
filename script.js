@@ -138,18 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------------------------------------
-     Process Phase Interaction
-     --------------------------------------------------------- */
-  document.querySelectorAll('.process-phase').forEach(phase => {
-    phase.addEventListener('click', () => {
-      if (window.innerWidth <= 768) return;
-      document.querySelectorAll('.process-phase').forEach(p => {
-        p.classList.toggle('active', p === phase);
-      });
-    });
-  });
-
-  /* ---------------------------------------------------------
      Subsector Deep Links
      --------------------------------------------------------- */
   document.querySelectorAll('[data-subsector]').forEach(link => {

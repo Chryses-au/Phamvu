@@ -139,7 +139,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
               transform .6s cubic-bezier(.25,.46,.45,.94);
 }
 .section.visible { opacity: 1; transform: translateY(0); }
-.section.visible.dimmed { opacity: .4; }
+.section.visible.dimmed { opacity: .65; }
 
 .section-heading {
   font-size: 2.75rem; font-weight: 700; letter-spacing: -.04em;
@@ -223,23 +223,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .process-phase {
   flex: 1; text-align: center; position: relative; z-index: 1;
-  cursor: pointer;
 }
 
 .phase-node {
   width: 44px; height: 44px; border-radius: 50%;
   background: #fff; border: 1.5px solid #d2d2d7;
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 12px; transition: all .3s ease;
+  margin: 0 auto 12px;
 }
-.phase-number { font-size: .8125rem; font-weight: 600; color: #86868b; transition: color .3s ease; }
-
-.process-phase:hover .phase-node,
-.process-phase.active .phase-node {
-  background: #1d1d1f; border-color: #1d1d1f;
-}
-.process-phase:hover .phase-number,
-.process-phase.active .phase-number { color: #fff; }
+.phase-number { font-size: .8125rem; font-weight: 600; color: #86868b; }
 
 .phase-content h3 {
   font-size: .75rem; font-weight: 600; color: #1d1d1f;
@@ -248,13 +240,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .phase-desc {
   font-size: .6875rem; color: #86868b; line-height: 1.6;
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-
-.process-phase:hover .phase-desc,
-.process-phase.active .phase-desc {
-  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -265,7 +250,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     text-align: left; padding: 12px 0;
   }
   .phase-node { margin: 0; flex-shrink: 0; }
-  .phase-desc { opacity: 1; }
 }
 
 /* ============================================================
