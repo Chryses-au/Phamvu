@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bryant Phamvu — Medical Device Engineer</title>
+  <title>Bryant Phamvu — Mechanical Engineer</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,6 @@
       <a href="#hero" class="nav-logo">BP</a>
       <ul class="nav-links">
         <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
-        <li><a href="#process" class="nav-link" data-section="process">Development Process</a></li>
         <li class="nav-dropdown">
           <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
           <ul class="dropdown-menu">
@@ -41,7 +40,6 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-nav-links">
       <li><a href="#hero" data-section="hero">Home</a></li>
-      <li><a href="#process" data-section="process">Development Process</a></li>
       <li>
         <a href="#portfolio" data-section="portfolio">Portfolio</a>
         <ul class="mobile-dropdown">
@@ -57,6 +55,13 @@
     </ul>
   </div>
 
+  <!-- Lightbox Overlay -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
   <main>
 
     <!-- ==================== 1. HERO — IDENTITY ==================== -->
@@ -67,8 +72,8 @@
             <img src="IMG_7273.PNG" alt="Bryant Phamvu" class="hero-headshot">
           </div>
           <h1 class="hero-name">Bryant Phamvu</h1>
-          <p class="hero-title">Medical Device Engineer</p>
-          <p class="hero-value">Mechanical engineer with 10+ years of experience developing complex medical devices across orthopedics, cryoablation, robotics, dental systems, and surgical instrumentation. Experienced in taking devices from concept through validation and manufacturing.</p>
+          <p class="hero-title">Mechanical Engineer</p>
+          <p class="hero-value">Mechanical engineer with a machinist background and 10+ years of experience developing complex medical devices across orthopedics, cryoablation, robotics, dental systems, and surgical instrumentation. Experienced in taking devices from concept through validation and manufacturing.</p>
           <div class="hero-stats">
             <div class="stat">
               <span class="stat-number">10+</span>
@@ -76,7 +81,7 @@
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-              <span class="stat-number">13</span>
+              <span class="stat-number">15</span>
               <span class="stat-label">Patents Filed</span>
             </div>
             <div class="stat-divider"></div>
@@ -89,59 +94,7 @@
       </div>
     </section>
 
-    <!-- ==================== 2. ENGINEERING PROCESS ==================== -->
-    <section id="process" class="section section-process">
-      <div class="container">
-        <h2 class="section-heading scroll-reveal">Development Process</h2>
-        <p class="section-subheading scroll-reveal">A proven approach to medical device development — from unmet clinical need to production.</p>
-
-        <div class="process-timeline scroll-reveal">
-          <div class="process-line"></div>
-
-          <div class="process-phase" data-phase="1">
-            <div class="phase-node"><div class="phase-number">1</div></div>
-            <div class="phase-content">
-              <h3>Requirements</h3>
-              <p class="phase-desc">Define clinical needs and translate them into engineering specifications through stakeholder alignment and market research.</p>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="2">
-            <div class="phase-node"><div class="phase-number">2</div></div>
-            <div class="phase-content">
-              <h3>Feasibility</h3>
-              <p class="phase-desc">Prototype rapidly, run characterization studies, and evaluate manufacturability through DFM analysis.</p>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="3">
-            <div class="phase-node"><div class="phase-number">3</div></div>
-            <div class="phase-content">
-              <h3>Verification &amp; Validation</h3>
-              <p class="phase-desc">Execute test protocols, document results, and confirm the design meets all safety and performance requirements.</p>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="4">
-            <div class="phase-node"><div class="phase-number">4</div></div>
-            <div class="phase-content">
-              <h3>Design Transfer</h3>
-              <p class="phase-desc">Finalize manufacturing processes, validate production tooling, and complete regulatory documentation.</p>
-            </div>
-          </div>
-
-          <div class="process-phase" data-phase="5">
-            <div class="phase-node"><div class="phase-number">5</div></div>
-            <div class="phase-content">
-              <h3>Production</h3>
-              <p class="phase-desc">Launch to market, monitor field performance, and incorporate customer feedback for continuous improvement.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 3. PORTFOLIO — CASE STUDIES ==================== -->
+    <!-- ==================== 2. PORTFOLIO — CASE STUDIES ==================== -->
     <section id="portfolio" class="section section-portfolio">
       <div class="container">
         <h2 class="section-heading scroll-reveal">Portfolio</h2>
@@ -318,7 +271,7 @@
               <button class="tech-toggle">Related Patents (6)</button>
               <div class="tech-panel">
                 <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>External Fixation for the Correction of Bone Deformity and Trauma</span><a href="https://patents.google.com/patent/US10413328B1" target="_blank" rel="noopener" class="ip-link">US10413328B1</a></div>
-                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Orthopedic Strut with Lockable Swivel Hinge</span><a href="https://patents.google.com/patent/US2018368888A1" target="_blank" rel="noopener" class="ip-link">US2018368888A1</a></div>
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Orthopedic Strut with Lockable Swivel Hinge</span><a href="https://patents.google.com/patent/US20180368888A1" target="_blank" rel="noopener" class="ip-link">US20180368888A1</a></div>
                 <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Orthopedic Strut with Multiple Attachment Clamps</span><a href="https://patents.google.com/patent/US20200054360A1" target="_blank" rel="noopener" class="ip-link">US20200054360A1</a></div>
                 <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Super Wing Nut and Bolt</span><a href="https://patents.google.com/patent/US20190262038A1" target="_blank" rel="noopener" class="ip-link">US20190262038A1</a></div>
                 <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>Wire Tensioner with Swivel Hinge</span><a href="https://patents.google.com/patent/US20190223933A1" target="_blank" rel="noopener" class="ip-link">US20190223933A1</a></div>
@@ -407,7 +360,7 @@
             <div class="tech-detail">
               <button class="tech-toggle">Related Patent</button>
               <div class="tech-panel">
-                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</span><a href="https://patents.google.com/patent/US2022217970863" target="_blank" rel="noopener" class="ip-link">US2022217970863</a></div>
+                <div class="inline-patent issued"><span class="ip-badge">Issued</span><span>System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</span><a href="https://patents.google.com/patent/CA3287190A1" target="_blank" rel="noopener" class="ip-link">CA3287190A1</a></div>
               </div>
             </div>
           </div>
@@ -501,7 +454,7 @@
     <section id="patents" class="section section-patents">
       <div class="container">
         <h2 class="section-heading scroll-reveal">Patents</h2>
-        <p class="section-subheading scroll-reveal">6 issued &middot; 7 pending</p>
+        <p class="section-subheading scroll-reveal">6 issued &middot; 9 pending &nbsp;&middot;&nbsp; <a href="https://patents.google.com/?inventor=Bryant+Phamvu" target="_blank" rel="noopener" style="color:#0066cc;font-weight:500;">View on Google Patents &rarr;</a></p>
 
         <div class="patent-grid">
 
@@ -512,10 +465,10 @@
             <span class="pc-domain">Orthopedics</span>
           </a>
 
-          <a href="https://patents.google.com/patent/US2018368888A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+          <a href="https://patents.google.com/patent/US20180368888A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
             <span class="pc-badge issued">Issued</span>
             <h3 class="pc-title">Orthopedic Strut with Lockable Swivel Hinge</h3>
-            <span class="pc-number">US2018368888A1</span>
+            <span class="pc-number">US20180368888A1</span>
             <span class="pc-domain">Orthopedics</span>
           </a>
 
@@ -540,10 +493,10 @@
             <span class="pc-domain">Orthopedics</span>
           </a>
 
-          <a href="https://patents.google.com/patent/US2022217970863" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+          <a href="https://patents.google.com/patent/CA3287190A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
             <span class="pc-badge issued">Issued</span>
             <h3 class="pc-title">System and Method for Automated Navigation and Control of an Endoscopic Surgical Device</h3>
-            <span class="pc-number">US2022217970863</span>
+            <span class="pc-number">CA3287190A1</span>
             <span class="pc-domain">Surgical Robotics</span>
           </a>
 
@@ -588,6 +541,20 @@
             <h3 class="pc-title">Variable Probe — Magnet Actuation</h3>
             <span class="pc-domain">Cryoablation</span>
           </div>
+
+          <a href="https://patents.google.com/patent/US20250160897A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">External Fixation for the Correction of Bone Deformity and Trauma (Continuation)</h3>
+            <span class="pc-number">US20250160897A1</span>
+            <span class="pc-domain">Orthopedics</span>
+          </a>
+
+          <a href="https://patents.google.com/patent/US20260041474A1" target="_blank" rel="noopener" class="patent-card scroll-reveal">
+            <span class="pc-badge pending">Pending</span>
+            <h3 class="pc-title">Cryoablation Probes and Related Methods</h3>
+            <span class="pc-number">US20260041474A1</span>
+            <span class="pc-domain">Cryoablation</span>
+          </a>
         </div>
       </div>
     </section>
@@ -792,7 +759,7 @@
           </a>
         </div>
       </div>
-      <p class="section-footer-note">&copy; Bryant Phamvu &middot; Medical Device Engineer</p>
+      <p class="section-footer-note">&copy; Bryant Phamvu &middot; Mechanical Engineer</p>
     </section>
 
   </main>

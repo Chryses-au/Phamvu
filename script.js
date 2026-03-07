@@ -309,6 +309,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------------------------------------------------
+     Lightbox — Click-to-Enlarge Images
+     --------------------------------------------------------- */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  function openLightbox(src, alt, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    setTimeout(() => { lightboxImg.src = ''; }, 300);
+  }
+
+  // Close on overlay click, close button, or Escape key
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-close')) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+  });
+
+  // Gallery slide images
+  document.querySelectorAll('.gallery-slide img').forEach(img => {
+    img.addEventListener('click', () => {
+      const caption = img.closest('.gallery-slide')?.querySelector('.gallery-caption')?.textContent || '';
+      openLightbox(img.src, img.alt, caption);
+    });
+  });
+
+  // Standalone case-study hero images (non-gallery)
+  document.querySelectorAll('.case-hero-img > img').forEach(img => {
+    img.addEventListener('click', () => {
+      openLightbox(img.src, img.alt, '');
+    });
+  });
+
+  /* ---------------------------------------------------------
      Navbar Background (tracks active section scroll)
      --------------------------------------------------------- */
   let ticking = false;
